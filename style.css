@@ -1,0 +1,510 @@
+/* ==================== Contenedor exclusivo para el menú ==================== */
+body {
+  display: flex;
+  justify-content: center;
+  font-size: 19px;
+  stem-ui, sans-serif;
+  background-color: #f7f3ef;
+  margin: 0;
+  padding: 0;
+}
+
+#pedidoForm {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* ==================== Títulos ==================== */
+
+h1{
+  font-size:28px;
+  font-weight:700;
+  text-align:center;
+  margin:0 0 10px 0;
+  color:#333;
+  position:relative;
+}
+
+h1::after{
+  content:"";
+  display:block;
+  width:70%;
+  height:4px;
+  background:#c62828;
+  margin:8px auto 0 auto;
+  border-radius:3px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700 !important;
+}
+
+#pedidoForm h1,
+.menu-section h2,
+.categoria h2 {
+  text-align: center;
+  font-weight: normal;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+/* ==================== Items del menú ==================== */
+
+.item {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 5px;
+  border-bottom: 1px solid #eee;
+  gap: 4px;
+}
+
+.item label,
+.item span,
+.item input[type="number"] {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.item label {
+  font-weight: normal;
+  flex: 1 1 auto;
+  font-size: 20px;
+}
+
+.item span {
+  color: #c62828;
+  margin: 0 8px;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.item input[type="number"] {
+  width: 60px;
+  padding: 4px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* ==================== Línea principal ==================== */
+
+.item-linea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.item-linea label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.item-linea span {
+  flex: 0;
+  text-align: center;
+  width: 80px;
+}
+
+.item-linea input.cantidad {
+  flex: 0;
+  width: 60px;
+  text-align: center;
+}
+
+/* ==================== Descripciones ==================== */
+
+.descripcion {
+  width: 100%;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 4px;
+}
+
+/* ==================== Botón ==================== */
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #c62828;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  background-color: #a61d1d;
+}
+
+/* ==================== Formularios ==================== */
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* ==================== Select ==================== */
+
+#tipoEntrega,
+#tipoPago {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+#tipoEntrega:focus,
+#tipoPago:focus {
+  border-color: #c62828;
+  outline: none;
+}
+
+/* ==================== Inputs especiales ==================== */
+
+#direccion {
+  width: 80%;
+  padding: 12px 15px;
+  font-size: 15px;
+  border-radius: 17px;
+}
+
+#efectivoCliente {
+  width: 40%;
+  padding: 12px 15px;
+  font-size: 15px;
+  border-radius: 17px;
+}
+
+#efectivoField small {
+  font-weight: bold;
+  font-size: 15px;
+  color: #c62828;
+  margin-top: 6px;
+  display: block;
+}
+
+/* ==================== Marca de agua ==================== */
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background-image: url("logo.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.08;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.form-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==================== Portada ==================== */
+
+.portada {
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.portada img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ==================== Gracias ==================== */
+
+.gracias-container {
+  max-width: 550px;
+  width: 95%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.gracias {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.gracias h1 {
+  border: none;
+}
+
+.gracias p {
+  font-size: 16px;
+}
+
+/* ==================== Selectores de sabor ==================== */
+
+.opciones-bebida {
+  margin-top: 6px;
+  padding: 10px;
+  background-color: #fff5f5;
+  border-radius: 10px;
+  border: 1px solid #f1c4c4;
+}
+
+.opciones-bebida select {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1.5px solid #c62828;
+  background-color: #ffffff;
+}
+
+.opciones-bebida select:focus {
+  border-color: #a61d1d;
+  box-shadow: 0 0 4px rgba(198,40,40,0.4);
+  outline: none;
+}
+
+/* ==================== Responsive ==================== */
+
+@media (max-width:600px) {
+
+  #pedidoForm{
+    width:95%;
+    padding:15px;
+  }
+
+  .item input[type="number"]{
+    width:50px;
+  }
+
+  .item label{
+    font-size:18px;
+  }
+
+}
+
+@media (max-width:480px) {
+
+  .item{
+    font-size:14px;
+  }
+
+}
+
+@media (min-width:768px){
+
+  #pedidoForm{
+    margin:40px auto;
+  }
+
+  .portada{
+    height:180px;
+  }
+
+}
+
+.menu-section h2,
+.menu-seccion h3{
+    text-align: center;
+    cursor: pointer;
+}
+
+.menu-section,
+.menu-seccion{
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 25px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.menu-section h2,
+.menu-seccion h3{
+    background: #f5f5f5;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* SELECTORES DE TAMAÑO Y SABOR */
+
+.tamano,
+.sabor{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background: #fff;
+    border: 2px solid #ff8c42;
+    border-radius: 8px;
+
+    padding: 6px 28px 6px 10px;
+
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+/* hover */
+.tamano:hover,
+.sabor:hover{
+    background: #fff4ec;
+    border-color: #ff6a00;
+}
+
+/* cuando se selecciona */
+.tamano:focus,
+.sabor:focus{
+    outline: none;
+    border-color: #ff6a00;
+    box-shadow: 0 0 6px rgba(255,106,0,0.3);
+}
+
+/* flecha personalizada */
+
+.tamano,
+.sabor{
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23ff6a00' d='M5 7l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 8px center;
+    background-size:14px;
+}
+
+.menu-section h2,
+.menu-seccion h3{
+    margin: 0;
+}
+
+.menu-section,
+.menu-seccion{
+    margin: 8px auto;
+}
+
+/* INPUTS DEL FORMULARIO */
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+    width:100%;
+    padding:8px 10px;
+
+    border-radius:8px;
+    border:1px solid #ccc;
+
+    font-size:14px;
+    box-sizing:border-box;
+}
+
+/* efecto cuando se selecciona */
+
+#numeroMesa{
+    max-width:150px;
+    display:block;
+}
+
+/* CHECKBOX TRATAMIENTO DE DATOS */
+
+#confirmPedido{
+    width:auto;
+    margin-right:8px;
+}
+
+.form-group label input[type="checkbox"]{
+    display:inline-block;
+}
+
+.form-group label{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+#confirmPedido{
+    margin-right:8px;
+}
+
+#confirmPedido{
+    transform:scale(1.2);
+}
+
+.form-group:has(#confirmPedido){
+    margin-top:18px;
+}
+
+#pedidoForm h1{
+  font-weight:700;
+  font-size:28px;
+  text-align: center;
+  margin: 5px 0 12px 0;
+  color: #333;
+  position: relative;
+}
+
+/* LOGO CENTRAL AJUSTADO */
+
+body::before{
+  content:"";
+  position:fixed;
+
+  top:50%;
+  left:50%;
+
+  width:320px;     /* más pequeño */
+  height:320px;
+
+  background-image:url("logolatorre.jpg");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+
+  transform:translate(-50%,-50%);
+
+  mix-blend-mode:multiply;
+  opacity:0.09;    /* menos visible */
+
+  pointer-events:none;
+  z-index:o;
+}

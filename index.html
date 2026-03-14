@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Torre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="pedidoForm">
+      <div class="container">
+        <div class="portada"><img src="portadalatorre.jpg" alt="portada del menu"></div>
+    </div>
+    <h1>Menú</h1>
+
+<section class="menu-section">
+
+<h2 onclick="toggleMenu(this)">🍽️ Entradas</h2>
+
+<div class="platos" style="display:none;">
+
+<!-- Entrada de pan -->
+<div class="item">
+<div class="item-linea">
+
+<label>
+<input type="checkbox" class="check-plato"
+name="Entrada de Pan"
+value="Entrada de Pan"
+onchange="toggleCantidad(this); toggleDescripcion(this)">
+Entrada de Pan
+</label>
+
+<span>$5.000</span>
+
+<input type="number" class="cantidad"
+name="EntradaPanCantidad"
+value="0" min="0"
+onchange="calcularTotal()">
+
+</div>
+
+<div class="descripcion" style="display:none;">
+Pan artesanal tostado con mantequilla de ajo.
+</div>
+</div>
+
+
+<!-- Bolitas de mozzarella -->
+<div class="item">
+<div class="item-linea">
+
+<label>
+<input type="checkbox" class="check-plato"
+name="Bolitas de Mozzarella"
+value="Bolitas de Mozzarella"
+onchange="toggleCantidad(this); toggleDescripcion(this)">
+Bolitas de Mozzarella
+</label>
+
+<span>$20.000</span>
+
+<input type="number" class="cantidad"
+name="BolitasMozzarellaCantidad"
+value="0" min="0"
+onchange="calcularTotal()">
+
+</div>
+
+<div class="descripcion" style="display:none;">
+Queso mozzarella apanado.
+</div>
+</div>
+
+
+<!-- Focaccia de la casa -->
+<div class="item">
+<div class="item-linea">
+
+<label>
+<input type="checkbox" class="check-plato"
+name="Focaccia de la Casa"
+value="Focaccia de la Casa"
+onchange="toggleCantidad(this); toggleDescripcion(this)">
+Focaccia de la Casa
+</label>
+
+<span>$10.000</span>
+
+<input type="number" class="cantidad"
+name="FocacciaCasaCantidad"
+value="0" min="0"
+onchange="calcularTotal()">
+
+</div>
+
+<div class="descripcion" style="display:none;">
+Pan italiano amasado con tomate deshidratado, albahaca, queso mozzarella, parmesano y orégano.
+</div>
+</div>
+
+<!-- Cazuela de quesos -->
+<div class="item">
+<div class="item-linea">
+
+<label>
+<input type="checkbox" class="check-plato"
+name="Cazuela de Quesos"
+value="Cazuela de Quesos"
+onchange="toggleCantidad(this); toggleDescripcion(this)">
+Cazuela de Quesos ⭐
+</label>
+
+<span>$15.000</span>
+
+<input type="number" class="cantidad"
+name="CazuelaQuesosCantidad"
+value="0" min="0"
+onchange="calcularTotal()">
+
+</div>
+
+<div class="descripcion" style="display:none;">
+Exquisita mezcla de queso mozzarella y di bufala gratinados con tomates cherry frescos. Servida con pan artesanal crujiente.
+</div>
+</div>
+
+<!-- Camarones apanados -->
+<div class="item">
+<div class="item-linea">
+
+<label>
+<input type="checkbox" class="check-plato"
+name="Camarones Apanados"
+value="Camarones Apanados"
+onchange="toggleCantidad(this); toggleDescripcion(this)">
+Camarones Apanados
+</label>
+
+<span>$20.000</span>
+
+<input type="number" class="cantidad"
+name="CamaronesApanadosCantidad"
+value="0" min="0"
+onchange="calcularTotal()">
+
+</div>
+
+<div class="descripcion" style="display:none;">
+Jugosos camarones empanizados y fritos al punto perfecto, servidos con salsa de la casa.
+</div>
+</div>
+
+<!-- Ceviche de camarón -->
+<div class="item">
+<div class="item-linea">
+
+<label>
+<input type="checkbox" class="check-plato"
+name="Ceviche de Camarón"
+value="Ceviche de Camarón"
+onchange="toggleCantidad(this); toggleDescripcion(this)">
+Ceviche de Camarón
+</label>
+
+<span>$20.000</span>
+
+<input type="number" class="cantidad"
+name="CevicheCamaronCantidad"
+value="0" min="0"
+onchange="calcularTotal()">
+
+</div>
+
+<div class="descripcion" style="display:none;">
+Frescos camarones marinados en jugo de limón, mezclados con cebolla ocañera, pimentón, maíz y cilantro, servidos con nuestra salsa golf especial picante y acompañados de tostadas de pan artesanal.
+</div>
+</div>
+</div>
+</section>
+    <section class="menu-section">
+
+<h2 onclick="toggleMenu(this)">🍽️ Platos Fuertes</h2>
+
+<div class="platos" style="display:none;">
+
+<h3>MAR</h3>
+
+<!-- Cazuela Latorre -->
+<div class="item">
+<div class="item-linea">
+
+<label>
+<input type="checkbox" class="check-plato"
+name="Cazuela Latorre"
+value="Cazuela Latorre"
+onchange="toggleCantidad(this); toggleDescripcion(this)">
+Cazuela Latorre
+</label>
+
+<span>$40.000</span>
+
+<input type="number" class="cantidad"
+name="CazuelaLatorreCantidad"
+value="0" min="0"
+onchange="calcularTotal()">
+
+</div>
+
+<div class="descripcion" style="display:none;">
+Deliciosa cazuela de mariscos preparada con salsa napolitana cremosa de la casa, con variedad de mariscos frescos y tiernos. Se cubre con queso mozzarella y parmesano que se gratinan formando una capa crujiente y sabrosa. Acompañada con pan tostado.
+</div>
+
+</div>
+
+<!-- Salmón al limón -->
+<div class="item">
+<div class="item-linea">
+
+<label>
+<input type="checkbox" class="check-plato"
+name="Salmon al Limon"
+value="Salmón al Limón"
+onchange="toggleCantidad(this); toggleDescripcion(this)">
+Salmón al Limón
+</label>
+
+<span>$40.000</span>
+
+<input type="number" class="cantidad"
+name="SalmonLimonCantidad"
+value="0" min="0"
+onchange="calcularTotal()">
+
+</div>
+
+<div class="descripcion" style="display:none;">
+Filete de salmón a la mantequilla de limón al horno sobre una cama de pasta vermicelli en salsa Alfredo. Acompañado de papa francesa o puré y ensalada de temporada.
+</div>
+
+</div>
+
+<!-- Trucha a la parmesana -->
+<div class="item">
+<div class="item-linea">
+
+<label>
+<input type="checkbox" class="check-plato"
+name="Trucha a la Parmesana"
+value="Trucha a la Parmesana"
+onchange="toggleCantidad(this); toggleDescripcion(this)">
+Trucha a la Parmesana
+</label>
+
+<span>$35.000</span>
+
+<input type="number" class="cantidad"
+name="TruchaParmesanaCantidad"
+value="0" min="0"
+onchange="calcularTotal()">
+
+</div>
+
+<div class="descripcion" style="display:none;">
+Trucha al ajillo gratinada con queso mozzarella y parmesano, acompañada de pasta napolitana, papas a la francesa o puré cremoso y ensalada de temporada.
+</div>
+
+</div>
+
+<!-- Arroz Mediterráneo -->
+<div class="item">
+<div class="item-linea">
+
+<label>
+<input type="checkbox" class="check-plato"
+name="Arroz Mediterraneo"
+value="Arroz Mediterráneo"
+onchange="toggleCantidad(this); toggleDescripcion(this)">
+Arroz Mediterráneo
+</label>
+
+<span>$32.000</span>
+
+<input type="number" class="cantidad"
+name="ArrozMediterraneoCantidad"
+value="0" min="0"
+onchange="calcularTotal()">
+
+</div>
+
+<div class="descripcion" style="display:none;">
+Arroz tipo frutti di mare con sabores tradicionales del Mediterráneo. Contiene calamar, pulpo, palmito, camarón y mejillones. Acompañado de papas a la francesa.
+</div>
+
+</div>
+
+<!-- Arroz Marco Polo -->
+<div class="item">
+<div class="item-linea">
+
+<label>
+<input type="checkbox" class="check-plato"
+name="Arroz Marco Polo"
+value="Arroz Marco Polo"
+onchange="toggleCantidad(this); toggleDescripcion(this)">
+Arroz Marco Polo ⭐
+</label>
+
+<span>$28.000</span>
+
+<input type="number" class="cantidad"
+name="ArrozMarcoPoloCantidad"
+value="0" min="0"
+onchange="calcularTotal()">
+
+</div>
+
+<div class="descripcion" style="display:none;">
+Arroz estilo chino con combinación de jamón artesanal, pollo, camarones y raíces chinas, acompañado de papas a la francesa.
+</div>
+</div>
+</div>
+</section>
+   
+<section class="menu-section">
+<h2 onclick="toggleMenu(this)">🍝 Lasagnas</h2>
+
+<div class="platos" style="display:none;">
+<p>Todas nuestras lasagnas se preparan con láminas de pasta artesanal, salsa de la casa y mezcla de queso mozzarella y parmesano gratinado.</p>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Lasagna Latorre" value="Lasagna Latorre" onchange="toggleCantidad(this);toggleDescripcion(this)">Latorre</label><span>$32.000</span><input type="number" class="cantidad" name="LatorreCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Jamón de lomo de cerdo artesanal, roast beef, tocineta, maíz tierno y camarones entre capas de pasta y queso gratinado.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Lasagna Stroganoff" value="Lasagna Stroganoff" onchange="toggleCantidad(this);toggleDescripcion(this)">Stroganoff</label><span>$30.000</span><input type="number" class="cantidad" name="StroganoffCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Lomo de res y champiñones en cremosa salsa con vino tinto y demi-glace entre capas de pasta y queso gratinado.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Lasagna Frutti di Mare" value="Lasagna Frutti di Mare" onchange="toggleCantidad(this);toggleDescripcion(this)">Frutti di Mare</label><span>$33.000</span><input type="number" class="cantidad" name="FruttiDiMareCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Pulpo, calamar, palmito de cangrejo, camarones y mejillones en salsa pomodoro cremosa.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Lasagna Pollo Champiñones" value="Lasagna Pollo Champiñones" onchange="toggleCantidad(this);toggleDescripcion(this)">Pollo y Champiñones</label><span>$27.000</span><input type="number" class="cantidad" name="PolloChampiñonesCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Trozos de pollo y champiñones laminados en cremosa salsa Alfredo.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Lasagna Bolognesa" value="Lasagna Bolognesa" onchange="toggleCantidad(this);toggleDescripcion(this)">Bolognesa</label><span>$27.000</span><input type="number" class="cantidad" name="BolognesaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Carne molida de res y cerdo cocinada lentamente en salsa napolitana con hierbas.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Lasagna Alfredo Pollo Brocoli" value="Lasagna Alfredo Pollo Brocoli" onchange="toggleCantidad(this);toggleDescripcion(this)">Alfredo Pollo y Brócoli ⭐</label><span>$28.000</span><input type="number" class="cantidad" name="AlfredoBrocoliCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Trozos de pollo y brócoli en suave salsa Alfredo entre capas de pasta y queso gratinado.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Lasagna Mixta" value="Lasagna Mixta" onchange="toggleCantidad(this);toggleDescripcion(this)">Lasagna Mixta</label><span>$28.000</span><input type="number" class="cantidad" name="MixtaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Roast beef y pollo en salsa pomodoro cremosa con abundante queso gratinado.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Lasagna Vegetariana" value="Lasagna Vegetariana" onchange="toggleCantidad(this);toggleDescripcion(this)">Lasagna Vegetariana</label><span>$27.000</span><input type="number" class="cantidad" name="VegetarianaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Champiñones, aceitunas, brócoli, pimentón, cebolla y maíz entre capas de pasta y queso gratinado.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pollo Carbonara" value="Pollo Carbonara" onchange="toggleCantidad(this);toggleDescripcion(this)">Pollo Carbonara ⭐</label><span>$28.000</span><input type="number" class="cantidad" name="CarbonaraCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Pollo y tocineta en salsa carbonara con yema de huevo, parmesano y crema de leche.</div></div>
+
+</div>
+</section>
+
+    <section class="menu-section"><h2 onclick="toggleMenu(this)">🍝 Pastas</h2>
+<div class="platos" style="display:none;">
+<p>Vermicelli, Fettuccine y Penne en salsas artesanales, desde Alfredo hasta Pomodoro. Incluye pan artesanal (agranda tu porción de pan por $2.000).</p>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pasta Frutti di Mare" value="Pasta Frutti di Mare" onchange="toggleCantidad(this);toggleDescripcion(this)">Frutti di Mare</label><span>$30.000</span><input type="number" class="cantidad" name="FruttiDiMarePastaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Pulpo, calamar, palmitos de cangrejo, camarones y mejillones en salsa pomodoro cremosa.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pasta Peruanas" value="Pasta Peruanas" onchange="toggleCantidad(this);toggleDescripcion(this)">Pastas Peruanas</label><span>$28.000</span><input type="number" class="cantidad" name="PastasPeruanasCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Lomito de res o cerdo salteado con pimentón, cebolla y tomate en salsa soya con toque picante.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pasta Mixta" value="Pasta Mixta" onchange="toggleCantidad(this);toggleDescripcion(this)">Mixta</label><span>$25.000</span><input type="number" class="cantidad" name="MixtaPastaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Láminas de roast beef y pollo en salsa pomodoro cremosa.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pasta Vegetariana" value="Pasta Vegetariana" onchange="toggleCantidad(this);toggleDescripcion(this)">Vegetariana</label><span>$25.000</span><input type="number" class="cantidad" name="VegetarianaPastaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Champiñón, aceitunas, brócoli, pimentón, cebolla y maíz en salsa Alfredo o pomodoro.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pasta Pollo" value="Pasta Pollo" onchange="toggleCantidad(this);toggleDescripcion(this)">Pollo</label><span>$25.000</span><input type="number" class="cantidad" name="PolloPastaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Trozos de pollo cocinados en mirepoix con finas hierbas en salsa pomodoro cremada o Alfredo.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pasta Pollo Champiñones" value="Pasta Pollo Champiñones" onchange="toggleCantidad(this);toggleDescripcion(this)">Pollo Champiñones</label><span>$26.000</span><input type="number" class="cantidad" name="PolloChampiñonesPastaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Pollo y champiñones laminados en salsa Alfredo.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pasta Carbonara Guanciale" value="Pasta Carbonara Guanciale" onchange="toggleCantidad(this);toggleDescripcion(this)">Carbonara con Guanciale ⭐</label><span>$32.000</span><input type="number" class="cantidad" name="CarbonaraGuancialeCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Receta tradicional italiana con guanciale curado, yema de huevo y queso parmesano.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pasta Carbonara Tocineta" value="Pasta Carbonara Tocineta" onchange="toggleCantidad(this);toggleDescripcion(this)">Carbonara con Tocineta</label><span>$26.000</span><input type="number" class="cantidad" name="CarbonaraTocinetaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Yema de huevo, parmesano y crema de leche con tocineta.</div></div>
+
+  <div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pasta Amatriciana" value="Pasta Amatriciana" onchange="toggleCantidad(this);toggleDescripcion(this)">Amatriciana</label><span>$25.000</span><input type="number" class="cantidad" name="AmatricianaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Tocineta ahumada, salsa pomodoro con un toque picante y albahaca.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pasta Bolognesa" value="Pasta Bolognesa" onchange="toggleCantidad(this);toggleDescripcion(this)">Bolognesa</label><span>$25.000</span><input type="number" class="cantidad" name="BolognesaPastaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Carne molida de res y cerdo en cocción lenta en salsa napolitana.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pasta Arrabiata" value="Pasta Arrabiata" onchange="toggleCantidad(this);toggleDescripcion(this)">Arrabiata</label><span>$20.000</span><input type="number" class="cantidad" name="ArrabiataCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Tomate cherry confitado con ajo y albahaca con toque picante.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pasta Alfredo Pollo Brocoli" value="Pasta Alfredo Pollo Brocoli" onchange="toggleCantidad(this);toggleDescripcion(this)">Alfredo Pollo y Brócoli</label><span>$27.000</span><input type="number" class="cantidad" name="AlfredoPolloBrocoliCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Trozos de pollo laminado y brócoli en suave salsa Alfredo.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pasta Cuatro Quesos" value="Pasta Cuatro Quesos" onchange="toggleCantidad(this);toggleDescripcion(this)">Cuatro Quesos</label><span>$27.000</span><input type="number" class="cantidad" name="CuatroQuesosCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Salsa de quesos fundidos en crema de leche y mantequilla (mozzarella, parmesano, ibérico y gouda).</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pasta MacCheese" value="Pasta MacCheese" onchange="toggleCantidad(this);toggleDescripcion(this)">Mac & Cheese</label><span>$25.000</span><input type="number" class="cantidad" name="MacCheeseCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Macarrones en salsa cheddar y mozzarella con papas chips y tocineta crujiente.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pasta Latorre" value="Pasta Latorre" onchange="toggleCantidad(this);toggleDescripcion(this)">Latorre ⭐</label><span>$28.000</span><input type="number" class="cantidad" name="LatorreCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Jamón de lomo de cerdo artesanal, roast beef, tocineta, maíz y camarones.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pasta Pollo Alcaparrado" value="Pasta Pollo Alcaparrado" onchange="toggleCantidad(this);toggleDescripcion(this)">Pollo Alcaparrado</label><span>$25.000</span><input type="number" class="cantidad" name="PolloAlcaparradoCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Pollo en salsa criolla de alcaparras y cerveza con toque casero.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pasta Stroganoff" value="Pasta Stroganoff" onchange="toggleCantidad(this);toggleDescripcion(this)">Stroganoff</label><span>$27.000</span><input type="number" class="cantidad" name="StroganoffCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Lomito de res y champiñones en crema de leche, vino tinto y demi-glace.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pasta GamberettiHot" value="Pasta GamberettiHot" onchange="toggleCantidad(this);toggleDescripcion(this)">Gamberetti Hot</label><span>$28.000</span><input type="number" class="cantidad" name="GamberettiHotCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Camarones en salsa pomodoro cremosa con toque picante.</div></div>
+
+</div></section>
+
+    <div class="menu-seccion"><h3 onclick="toggleMenu(this)">🍕 Pizzas</h3><div class="menu-contenido">
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Burger Pizza" value="Burger Pizza" onchange="toggleCantidad(this);toggleDescripcion(this)">Burger Pizza ⭐</label><select class="tamano" onchange="calcularTotal()"><option value="28000">S $28.000</option><option value="45000">M $45.000</option></select><input type="number" class="cantidad" name="BurgerPizzaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Carne de hamburguesa, tocineta, cebolla caramelizada acompañada de salsa de la casa.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Hot Dog Pizza" value="Hot Dog Pizza" onchange="toggleCantidad(this);toggleDescripcion(this)">Hot Dog Pizza</label><select class="tamano" onchange="calcularTotal()"><option value="28000">S $28.000</option><option value="45000">M $45.000</option></select><input type="number" class="cantidad" name="HotDogPizzaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Salchicha americana, pollo cremoso, huevo de codorniz, queso cheddar, papa ripio y piña miel mostaza.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Di Bufala Autor" value="Di Bufala Autor" onchange="toggleCantidad(this);toggleDescripcion(this)">Di Búfala ⭐</label><select class="tamano" onchange="calcularTotal()"><option value="28000">S $28.000</option><option value="45000">M $45.000</option></select><input type="number" class="cantidad" name="DiBufalaAutorCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Mozzarella de búfala, tomate confitado y champiñones París.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Guanciale" value="Guanciale" onchange="toggleCantidad(this);toggleDescripcion(this)">Guanciale</label><select class="tamano" onchange="calcularTotal()"><option value="28000">S $28.000</option><option value="45000">M $45.000</option></select><input type="number" class="cantidad" name="GuancialeCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Tocineta italiana artesanal (guanciale), queso parmesano y cebolla ocañera caramelizada en vino de corozo y Malbec.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pepperonata" value="Pepperonata" onchange="toggleCantidad(this);toggleDescripcion(this)">Pepperonata</label><select class="tamano" onchange="calcularTotal()"><option value="25000">S $25.000</option><option value="43000">M $43.000</option></select><input type="number" class="cantidad" name="PepperonataCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Pepperoni madurado, pimentón, cebolla roja y aceitunas negras.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Alfredo Pollo y Brocoli" value="Alfredo Pollo y Brocoli" onchange="toggleCantidad(this);toggleDescripcion(this)">Alfredo Pollo y Brócoli</label><select class="tamano" onchange="calcularTotal()"><option value="27000">S $27.000</option><option value="46000">M $46.000</option></select><input type="number" class="cantidad" name="AlfredoPolloBrocoliCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Trozos de pollo y brócoli en suave salsa Alfredo.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Frutti Di Mare" value="Frutti Di Mare" onchange="toggleCantidad(this);toggleDescripcion(this)">Frutti Di Mare</label><select class="tamano" onchange="calcularTotal()"><option value="35000">S $35.000</option><option value="55000">M $55.000</option></select><input type="number" class="cantidad" name="FruttiDiMareCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Pulpo, calamar, palmitos de cangrejo, camarones y mejillones en salsa pomodoro cremosa.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Madrileña" value="Madrileña" onchange="toggleCantidad(this);toggleDescripcion(this)">Madrileña</label><select class="tamano" onchange="calcularTotal()"><option value="30000">S $30.000</option><option value="47000">M $47.000</option></select><input type="number" class="cantidad" name="MadrilenaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Jamón serrano, chorizo español y pepperoni madurado.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Latorre" value="Latorre" onchange="toggleCantidad(this);toggleDescripcion(this)">Latorre</label><select class="tamano" onchange="calcularTotal()"><option value="30000">S $30.000</option><option value="47000">M $47.000</option></select><input type="number" class="cantidad" name="LatorreCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Jamón artesanal, roast beef, tocineta ahumada, camarones, maíz y pimentón.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Filet Mignon" value="Filet Mignon" onchange="toggleCantidad(this);toggleDescripcion(this)">Filet Mignon</label><select class="tamano" onchange="calcularTotal()"><option value="30000">S $30.000</option><option value="48000">M $48.000</option></select><input type="number" class="cantidad" name="FiletMignonCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Lomito fino en julianas en salsa de vino tinto y champiñones.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Parrilla Argentina" value="Parrilla Argentina" onchange="toggleCantidad(this);toggleDescripcion(this)">Parrilla Argentina</label><select class="tamano" onchange="calcularTotal()"><option value="28000">S $28.000</option><option value="46000">M $46.000</option></select><input type="number" class="cantidad" name="ParrillaArgentinaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Lomo de res, lomo de cerdo y chorizo salteado con chimichurri, cebolla y pimentón.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pepperoni Chicken Hot" value="Pepperoni Chicken Hot" onchange="toggleCantidad(this);toggleDescripcion(this)">Pepperoni Chicken Hot</label><select class="tamano" onchange="calcularTotal()"><option value="26000">S $26.000</option><option value="45000">M $45.000</option></select><input type="number" class="cantidad" name="PepperoniChickenHotCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Láminas de pepperoni picante y pollo enchilado.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Vendetta" value="Vendetta" onchange="toggleCantidad(this);toggleDescripcion(this)">Vendetta</label><select class="tamano" onchange="calcularTotal()"><option value="28000">S $28.000</option><option value="45000">M $45.000</option></select><input type="number" class="cantidad" name="VendettaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Carne a la boloñesa, tocineta ahumada y champiñones frescos.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Cuatro Quesos" value="Cuatro Quesos" onchange="toggleCantidad(this);toggleDescripcion(this)">Cuatro Quesos</label><select class="tamano" onchange="calcularTotal()"><option value="27000">S $27.000</option><option value="45000">M $45.000</option></select><input type="number" class="cantidad" name="CuatroQuesosCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Mozzarella, parmesano, ibérico y gouda.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Campesina" value="Campesina" onchange="toggleCantidad(this);toggleDescripcion(this)">Campesina</label><select class="tamano" onchange="calcularTotal()"><option value="25000">S $25.000</option><option value="38000">M $38.000</option></select><input type="number" class="cantidad" name="CampesinaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Láminas de pollo, maíz, pimentón y cebolla roja.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Colombiana" value="Colombiana" onchange="toggleCantidad(this);toggleDescripcion(this)">Colombiana</label><select class="tamano" onchange="calcularTotal()"><option value="25000">S $25.000</option><option value="45000">M $45.000</option></select><input type="number" class="cantidad" name="ColombianaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Carne de res desmechada, chorizo santa rosano, hogao y maíz.</div></div>
+</div></div>
+</div></div>
+
+    <div class="menu-seccion"><h3 onclick="toggleMenu(this)">🍕 Pizzas Tradicionales</h3><div class="menu-contenido">
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pollo y Champiñones" value="Pollo y Champiñones" onchange="toggleCantidad(this);toggleDescripcion(this)">Pollo y Champiñones</label><select class="tamano" onchange="calcularTotal()"><option value="28000">S $28.000</option><option value="45000">M $45.000</option></select><input type="number" class="cantidad" name="PolloChampinonesCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Láminas de pollo a las finas hierbas con champiñones París.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pepperoni" value="Pepperoni" onchange="toggleCantidad(this);toggleDescripcion(this)">Pepperoni</label><select class="tamano" onchange="calcularTotal()"><option value="24000">S $24.000</option><option value="42000">M $42.000</option></select><input type="number" class="cantidad" name="PepperoniCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Láminas de pepperoni madurado.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Napolitana" value="Napolitana" onchange="toggleCantidad(this);toggleDescripcion(this)">Napolitana</label><select class="tamano" onchange="calcularTotal()"><option value="23000">S $23.000</option><option value="38000">M $38.000</option></select><input type="number" class="cantidad" name="NapolitanaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Rodajas de tomate, orégano y albahaca.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Carnes Frias" value="Carnes Frias" onchange="toggleCantidad(this);toggleDescripcion(this)">Carnes Frías</label><select class="tamano" onchange="calcularTotal()"><option value="24000">S $24.000</option><option value="40000">M $40.000</option></select><input type="number" class="cantidad" name="CarnesFriasCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Salchicha americana, tocineta ahumada y jamón ahumado.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Mexicana" value="Mexicana" onchange="toggleCantidad(this);toggleDescripcion(this)">Mexicana</label><select class="tamano" onchange="calcularTotal()"><option value="26000">S $26.000</option><option value="40000">M $40.000</option></select><input type="number" class="cantidad" name="MexicanaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Pico de gallo, maíz, cilantro y carne al pastor.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Di Bufala Tradicional" value="Di Bufala Tradicional" onchange="toggleCantidad(this);toggleDescripcion(this)">Di Bufala</label><select class="tamano" onchange="calcularTotal()"><option value="30000">S $30.000</option><option value="50000">M $50.000</option></select><input type="number" class="cantidad" name="DiBufalaTradicionalCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Mozzarella de búfala, tomate confitado y champiñones París.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Vegetariana" value="Vegetariana" onchange="toggleCantidad(this);toggleDescripcion(this)">Vegetariana</label><select class="tamano" onchange="calcularTotal()"><option value="26000">S $26.000</option><option value="40000">M $40.000</option></select><input type="number" class="cantidad" name="VegetarianaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Champiñón, aceitunas, brócoli, pimentón, cebolla y maíz en salsa Alfredo o pomodoro.</div></div>
+
+</div></div>
+
+<div class="menu-seccion"><h3 onclick="toggleMenu(this)">🍕 Pizzas Dulces</h3><div class="menu-contenido">
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Tropical Dulce" value="Tropical Dulce" onchange="toggleCantidad(this);toggleDescripcion(this)">Tropical</label><select class="tamano" onchange="calcularTotal()"><option value="28000">S $28.000</option><option value="45000">M $45.000</option></select><input type="number" class="cantidad" name="TropicalCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Durazno, cereza, uvas pasas, piña, manzana y pera confitada.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pizza Hawaiana Dulce" value="Pizza Hawaiana Dulce" onchange="toggleCantidad(this);toggleDescripcion(this)">Pizza Hawaiana</label><select class="tamano" onchange="calcularTotal()"><option value="24000">S $24.000</option><option value="40000">M $40.000</option></select><input type="number" class="cantidad" name="HawaianaDulceCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Jamón ahumado y piña confitada.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Veleña" value="Veleña" onchange="toggleCantidad(this);toggleDescripcion(this)">Veleña</label><select class="tamano" onchange="calcularTotal()"><option value="23000">S $23.000</option><option value="38000">M $38.000</option></select><input type="number" class="cantidad" name="VelenaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Queso mozzarella y bocadillo veleño.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Maduro Tocineta" value="Maduro Tocineta" onchange="toggleCantidad(this);toggleDescripcion(this)">Maduro Tocineta</label><select class="tamano" onchange="calcularTotal()"><option value="24000">S $24.000</option><option value="40000">M $40.000</option></select><input type="number" class="cantidad" name="MaduroTocinetaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Tajadas de maduro y tocineta ahumada.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Nutella Fresa Banano" value="Nutella Fresa Banano" onchange="toggleCantidad(this);toggleDescripcion(this)">Nutella Fresa o Banano</label><select class="tamano" onchange="calcularTotal()"><option value="26000">S $26.000</option></select><input type="number" class="cantidad" name="NutellaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Pizza dulce con Nutella y elección de fresa o banano.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Arequipe y Queso" value="Arequipe y Queso" onchange="toggleCantidad(this);toggleDescripcion(this)">Arequipe y Queso</label><select class="tamano" onchange="calcularTotal()"><option value="26000">S $26.000</option></select><input type="number" class="cantidad" name="ArequipeQuesoCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Pizza dulce con arequipe y queso.</div></div>
+
+</div></div>
+
+    <div class="menu-seccion"><h3 onclick="toggleMenu(this)">🥖 Panerollis</h3><div class="menu-contenido">
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Filet Mignon Panerolli" value="Filet Mignon Panerolli" onchange="toggleCantidad(this);toggleDescripcion(this)">Filet Mignon</label><span>$28.000</span><input type="number" class="cantidad" name="FiletMignonCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Lomito fino en julianas en salsa de vino tinto y champiñones.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Latorre Panerolli" value="Latorre Panerolli" onchange="toggleCantidad(this);toggleDescripcion(this)">Latorre</label><span>$27.000</span><input type="number" class="cantidad" name="LatorreCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Jamón artesanal, roast beef, tocineta ahumada, camarones, maíz y pimentón.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Colombiano Panerolli" value="Colombiano Panerolli" onchange="toggleCantidad(this);toggleDescripcion(this)">Colombiano</label><span>$28.000</span><input type="number" class="cantidad" name="ColombianoCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Carne de res desmechada, chorizo santa rosano, hogao y maíz.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Parrilla Argentina Panerolli" value="Parrilla Argentina Panerolli" onchange="toggleCantidad(this);toggleDescripcion(this)">Parrilla Argentina ⭐</label><span>$28.000</span><input type="number" class="cantidad" name="ParrillaArgentinaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Lomo de res, lomo de cerdo y chorizo salteado con chimichurri, cebolla y pimentón.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Madrileño Panerolli" value="Madrileño Panerolli" onchange="toggleCantidad(this);toggleDescripcion(this)">Madrileño ⭐</label><span>$28.000</span><input type="number" class="cantidad" name="MadrileñoCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Jamón serrano, chorizo español y pepperoni madurado.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Roast Beef Panerolli" value="Roast Beef Panerolli" onchange="toggleCantidad(this);toggleDescripcion(this)">Roast Beef</label><span>$25.000</span><input type="number" class="cantidad" name="RoastBeefCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Láminas frescas de roast beef horneadas a la perfección.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Chicken Bacon Panerolli" value="Chicken Bacon Panerolli" onchange="toggleCantidad(this);toggleDescripcion(this)">Chicken Bacon</label><span>$26.000</span><input type="number" class="cantidad" name="ChickenBaconCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Tocineta ahumada y pollo.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Hawaiano Panerolli" value="Hawaiano Panerolli" onchange="toggleCantidad(this);toggleDescripcion(this)">Hawaiano</label><span>$26.000</span><input type="number" class="cantidad" name="HawaianoCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Piña confitada y jamón ahumado.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pollo Champiñones Panerolli" value="Pollo Champiñones Panerolli" onchange="toggleCantidad(this);toggleDescripcion(this)">Pollo Champiñones</label><span>$26.000</span><input type="number" class="cantidad" name="PolloChampinonesPanerolliCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Pollo laminado y champiñones frescos.</div></div>
+
+</div></div>
+
+    <div class="menu-seccion"><h3 onclick="toggleMenu(this)">🥩 Tierra</h3><div class="menu-contenido">
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Cerdo Salteado" value="Cerdo Salteado" onchange="toggleCantidad(this);toggleDescripcion(this)">Cerdo Salteado</label><span>$28.000</span><input type="number" class="cantidad" name="CerdoSalteadoCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Preparación con orígenes peruanos donde salteamos trozos de lomo de cerdo con cebolla, pimentón, tomate, maíz y salsa soya sobre unas crujientes papas a la francesa, acompañado de pasta vermicelli en salsa napolitana fusionando sabores italianos y peruanos.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Cerdo al Vino Tinto" value="Cerdo al Vino Tinto" onchange="toggleCantidad(this);toggleDescripcion(this)">Cerdo al Vino Tinto</label><span>$28.000</span><input type="number" class="cantidad" name="CerdoVinoCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Medallón de cerdo sellado a la plancha, bañado en reducción de vino tinto acompañado de papas a la francesa o puré cremado en una cama de la pasta de tu preferencia en salsa Alfredo.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Ballotine de Pollo" value="Ballotine de Pollo" onchange="toggleCantidad(this);toggleDescripcion(this)">Ballotine de Pollo ⭐</label><span>$30.000</span><input type="number" class="cantidad" name="BallotinePolloCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Nuestra versión del Cordon Bleu, pierna y pernil rellena de tocineta ahumada, queso mozzarella y tomates deshidratados sellada y horneada en una cama de fettuccine en salsa de tres quesos acompañada de papa a la francesa o puré.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Milanesa de Pollo" value="Milanesa de Pollo" onchange="toggleCantidad(this);toggleDescripcion(this)">Milanesa de Pollo</label><span>$28.000</span><input type="number" class="cantidad" name="MilanesaPolloCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Inspirado en la clásica Milanesa a la Napolitana originaria de Argentina, este plato combina una pechuga de pollo crujiente con una suave salsa napolitana coronada con quesos gratinados. Acompañada de pasta pomodoro y papas doradas.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Filet Mignon" value="Filet Mignon" onchange="toggleCantidad(this);toggleDescripcion(this)">Filet Mignon</label><span>$38.000</span><input type="number" class="cantidad" name="FiletMignonCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Medallón de lomito fino de res (250 g), albardado con tocineta ahumada, sellado al punto y terminado al horno para conservar toda su jugosidad. Se sirve bañado en salsa demi-glace con champiñones, en una cama de pasta en salsa stroganoff, acompañado de papas a la francesa o puré cremoso y ensalada de temporada.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Punta de Anca" value="Punta de Anca" onchange="toggleCantidad(this);toggleDescripcion(this)">Punta de Anca ⭐</label><span>$37.000</span><input type="number" class="cantidad" name="PuntaAncaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Jugoso filete de punta de anca en su buen término, en una cama de macarrones en salsa queso cheddar y mozzarella, acompañada de papas a la francesa o puré cremado.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Lomito Wellington" value="Lomito Wellington" onchange="toggleCantidad(this);toggleDescripcion(this)">Lomito Wellington</label><span>$38.000</span><input type="number" class="cantidad" name="LomitoWellingtonCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Inspirado en el tradicional Beef Wellington inglés, este plato fusiona la suavidad del solomillo con el crujir del hojaldre y el sabor ahumado de la tocineta. Se acompaña con fettuccine en cremosa salsa de tres quesos y papas doradas.</div></div>
+
+</div></div>
+
+<div class="menu-seccion"><h3 onclick="toggleMenu(this)">🥪 Sándwiches</h3><div class="menu-contenido">
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Sandwich Madrileño" value="Sandwich Madrileño" onchange="toggleCantidad(this);toggleDescripcion(this)">Madrileño</label><span>$26.000</span><input type="number" class="cantidad" name="SandwichMadrilenoCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Jamón serrano, chorizo español y pepperoni.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Sandwich Torre" value="Sandwich Torre" onchange="toggleCantidad(this);toggleDescripcion(this)">Torre</label><span>$27.000</span><input type="number" class="cantidad" name="SandwichTorreCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Jamón de lomo de cerdo artesanal, roast beef, tocineta, maíz y camarones.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Sandwich Roast Beef" value="Sandwich Roast Beef" onchange="toggleCantidad(this);toggleDescripcion(this)">Roast Beef</label><span>$25.000</span><input type="number" class="cantidad" name="SandwichRoastBeefCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Láminas de carne de res horneadas a la perfección.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Sandwich Chicken Bacon" value="Sandwich Chicken Bacon" onchange="toggleCantidad(this);toggleDescripcion(this)">Chicken Bacon</label><span>$25.000</span><input type="number" class="cantidad" name="SandwichChickenBaconCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Láminas de pollo y tocineta ahumada.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Sandwich Pollo Champiñones" value="Sandwich Pollo Champiñones" onchange="toggleCantidad(this);toggleDescripcion(this)">Pollo Champiñones</label><span>$25.000</span><input type="number" class="cantidad" name="SandwichPolloChampinonesCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Láminas de pollo a las finas hierbas con champiñones París.</div></div>
+
+</div></div>
+
+  <div class="menu-seccion"><h3 onclick="toggleMenu(this)">🍔 Burgers</h3><div class="menu-contenido">
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Burger Torre" value="Burger Torre" onchange="toggleCantidad(this);toggleDescripcion(this)">Burger Torre</label><span>$32.000</span><input type="number" class="cantidad" name="BurgerTorreCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">150 gr de carne de res marinada estilo de la casa, roast beef, jamón artesanal, tocineta de lomo, camarones apanados, mozzarella, maíz y pimentón. Vegetales opcionales.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Classic Burger" value="Classic Burger" onchange="toggleCantidad(this);toggleDescripcion(this)">Classic Burger</label><span>$25.000</span><input type="number" class="cantidad" name="ClassicBurgerCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">150 gr de carne de res marinada estilo de la casa, tocineta de lomo, pan brioche y queso. Vegetales opcionales.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Chicken Bacon Burger" value="Chicken Bacon Burger" onchange="toggleCantidad(this);toggleDescripcion(this)">Chicken Bacon</label><span>$20.000</span><input type="number" class="cantidad" name="ChickenBaconBurgerCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Milanesa de pollo, tocineta de lomo, queso mozzarella, salsa de la casa y pan brioche. Vegetales opcionales.</div></div>
+
+</div></div>
+
+   <div class="menu-seccion"><h3 onclick="toggleMenu(this)">🥗 Ensaladas</h3><div class="menu-contenido">
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Ensalada Torre" value="Ensalada Torre" onchange="toggleCantidad(this);toggleDescripcion(this)">Ensalada Torre</label><span>$27.000</span><input type="number" class="cantidad" name="EnsaladaTorreCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Lechuga crespa, pollo a la plancha, tocineta crocante, camarones apanados, cubos de queso, tomates cherry, brócoli al vapor y croutones con aderezo de la casa.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Ensalada Caprese" value="Ensalada Caprese" onchange="toggleCantidad(this);toggleDescripcion(this)">Caprese</label><span>$20.000</span><input type="number" class="cantidad" name="CapreseCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Mozzarella de búfala, tomates cherry, rúgula fresca, salsa pesto y reducción balsámica con croutones artesanales.</div></div>
+
+</div></div>
+
+    <div class="menu-seccion"><h3 onclick="toggleMenu(this)">🥤 Bebidas</h3><div class="menu-contenido">
+
+<h4>Sodas Italianas</h4>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Soda Italiana Frutos Rojos" value="Soda Italiana Frutos Rojos" onchange="toggleCantidad(this);toggleDescripcion(this)">Frutos Rojos</label><span>$14.000</span><input type="number" class="cantidad" name="SodaFrutosRojosCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Soda Italiana Maracuyá" value="Soda Italiana Maracuyá" onchange="toggleCantidad(this);toggleDescripcion(this)">Maracuyá</label><span>$12.000</span><input type="number" class="cantidad" name="SodaMaracuyaCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Soda Italiana Tamarindo" value="Soda Italiana Tamarindo" onchange="toggleCantidad(this);toggleDescripcion(this)">Tamarindo</label><span>$12.000</span><input type="number" class="cantidad" name="SodaTamarindoCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+
+<h4>Gaseosas</h4>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Coca Cola 400ml" value="Coca Cola 400ml" onchange="toggleCantidad(this);toggleDescripcion(this)">Coca Cola 400ml</label><span>$5.000</span><input type="number" class="cantidad" name="CocaColaCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Postobon 400ml" value="Postobon 400ml" onchange="toggleCantidad(this);toggleDescripcion(this)">Postobon 400ml</label><span>$4.500</span><input type="number" class="cantidad" name="PostobonCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+
+<h4>Limonadas</h4>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Limonada Natural" value="Limonada Natural" onchange="toggleCantidad(this);toggleDescripcion(this)">Natural</label><span>$8.000</span><input type="number" class="cantidad" name="LimonadaNaturalCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Limonada Cerezada" value="Limonada Cerezada" onchange="toggleCantidad(this);toggleDescripcion(this)">Cerezada</label><span>$12.000</span><input type="number" class="cantidad" name="LimonadaCerezadaCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Limonada Coco" value="Limonada Coco" onchange="toggleCantidad(this);toggleDescripcion(this)">Coco</label><span>$14.000</span><input type="number" class="cantidad" name="LimonadaCocoCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Limonada Mango" value="Limonada Mango" onchange="toggleCantidad(this);toggleDescripcion(this)">Mango</label><span>$12.000</span><input type="number" class="cantidad" name="LimonadaMangoCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Limonada Tamarindo" value="Limonada Tamarindo" onchange="toggleCantidad(this);toggleDescripcion(this)">Tamarindo</label><span>$12.000</span><input type="number" class="cantidad" name="LimonadaTamarindoCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Limonada Hierbabuena" value="Limonada Hierbabuena" onchange="toggleCantidad(this);toggleDescripcion(this)">Hierbabuena</label><span>$12.000</span><input type="number" class="cantidad" name="LimonadaHierbabuenaCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+
+<h4>Jugos Naturales</h4>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Jugo Natural Agua" value="Jugo Natural (Agua)" onchange="toggleCantidad(this);toggleDescripcion(this)">Jugo Natural (Agua)</label><span>$8.000</span><select class="sabor"><option>Mango</option><option>Fresa</option><option>Maracuyá</option><option>Mora</option><option>Frutos Rojos</option><option>Guanábana</option></select><input type="number" class="cantidad" name="JugoAguaCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Jugo Natural Leche" value="Jugo Natural (Leche)" onchange="toggleCantidad(this);toggleDescripcion(this)">Jugo Natural (Leche)</label><span>$10.000</span><select class="sabor"><option>Mango</option><option>Fresa</option><option>Maracuyá</option><option>Mora</option><option>Frutos Rojos</option><option>Guanábana</option></select><input type="number" class="cantidad" name="JugoLecheCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+</div></div>
+
+  <div class="menu-seccion"><h3 onclick="toggleMenu(this)">👦 Menú Infantil</h3><div class="menu-contenido">
+
+<div class="descripcion-seccion">Todos los combos incluyen papitas, juguete y jugo HIT de cajita.</div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Mini Pizza Infantil" value="Mini Pizza Infantil" onchange="toggleCantidad(this);toggleDescripcion(this)">Mini Pizza</label><span>$17.000</span><select class="sabor"><option>Hawaiana</option><option>Pollo Jamón</option></select><input type="number" class="cantidad" name="MiniPizzaInfantilCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Mini Pizza Pepperoni Infantil" value="Mini Pizza Pepperoni Infantil" onchange="toggleCantidad(this);toggleDescripcion(this)">Mini Pizza Pepperoni</label><span>$17.000</span><input type="number" class="cantidad" name="MiniPizzaPepperoniCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pastas de Pollo Infantil" value="Pastas de Pollo Infantil" onchange="toggleCantidad(this);toggleDescripcion(this)">Pastas de Pollo</label><span>$17.000</span><input type="number" class="cantidad" name="PastasPolloCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Nuggets de Pollo Infantil" value="Nuggets de Pollo Infantil" onchange="toggleCantidad(this);toggleDescripcion(this)">Nuggets de Pollo</label><span>$15.000</span><input type="number" class="cantidad" name="NuggetsPolloCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+</div></div>
+
+    <!-- ====== FORMULARIO ======== -->
+<form id="pedidoForm">
+  <section class="menu-section">
+    <h2>📝 Detalles del Cliente</h2>
+
+    <div class="form-group">
+      <label for="nombre">👤 Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+      <small class="error">Este campo es obligatorio</small>
+    </div>
+
+    <div class="form-group">
+      <label for="telefono">📞 Número de WhatsApp:</label>
+      <input type="tel" id="telefono" name="telefono" required placeholder="Ej: 3001234567">
+      <small class="error">Este campo es obligatorio</small>
+    </div>
+
+    <div class="form-group">
+      <label for="tipoEntrega">📦 Tipo de entrega:</label>
+      <select id="tipoEntrega" name="tipoEntrega" required>
+        <option value="">-- Selecciona --</option>
+        <option value="Recoger en el local">Recoger en el local</option>
+        <option value="A domicilio">A domicilio</option>
+        <option value="Comer dentro del local">Comer dentro del local</option>
+      </select>
+    </div>
+
+    <!-- Campo de dirección oculto inicialmente -->
+    <div class="form-group" id="direccionField" style="display:none;">
+        <p id="costoDomicilio"
+        style="display: none; color: rgb(245, 63, 63);
+        font-weight: bold; margin-bottom: 8px;">
+        ⚠️ El domicilio se pagara aparte del pedido</p>
+        
+      <label for="direccion">📍 Dirección:</label>
+      <input type="text" id="direccion" name="direccion" placeholder="Escribe tu dirección">
+    </div>
+
+    <!-- Campo número de mesa oculto inicialmente -->
+    <div class="form-group" id="mesaField" style="display:none;">
+      <label for="numeroMesa">🔢 Número de mesa:</label>
+      <input type="text" id="numeroMesa" name="numeroMesa" placeholder="Número de mesa">
+    </div>
+
+    <div class="form-group">
+  <label for="tipoPago">💰 Tipo de pago:</label>
+  <select id="tipoPago" name="tipoPago" required>
+    <option value="">-- Selecciona --</option>
+    <option value="Efectivo">Efectivo</option>
+    <option value="Nequi">Nequi</option>
+    <option value="Bancolombia">Bancolombia</option>
+    <option value="Daviplata">Daviplata</option>
+    <option value="CrediSevir">CrediSevir</option>
+  </select>
+</div>
+
+<!-- Campo "Con cuánto pagará" oculto inicialmente -->
+<div class="form-group" id="efectivoField" style="display:none;">
+  <label for="efectivoMonto">💵 Con cuánto pagará:</label>
+  <small>Esto ayuda a preparar el cambio correcto 🙏</small>
+  <input type="text" id="efectivoCliente" name="efectivoMonto" class="efectivoCliente" placeholder="Ej: 50.000">
+</div>
+
+<!-- Información dinámica de pagos -->
+<div class="form-group" id="infoPago" style="display:none;">
+
+  <div id="infoNequi" class="info-transferencia" style="display:none;">
+    <p><strong>📱 Nequi</strong></p>
+    <p>3168384599</p>
+    <p>No hacemos reembolso de transferencias, ten claro lo que vas a pedir ✍️</p>
+    <small>⚠️ POR FAVOR ENVIAR EL PANTALLAZO DE LA TRANSFERENCIA JUSTO EN EL MOMENTO QUE SEA EFECTUADA POR WHATSAPP</small>
+  </div>
+
+  <div id="infoBanco" class="info-transferencia" style="display:none;">
+    <p><strong>🏦 Bancolombia Ahorro</strong></p>
+    <p>31876673358</p>
+    <p>No hacemos reembolso de transferencias, ten claro lo que vas a pedir ✍️</p>
+    <small>⚠️ POR FAVOR ENVIAR EL PANTALLAZO DE LA TRANSFERENCIA JUSTO EN EL MOMENTO QUE SEA EFECTUADA POR WHATSAPP</small>
+  </div>
+
+  <div id="infoDaviplata" class="info-transferencia" style="display:none;">
+    <p><strong>📲 Daviplata</strong></p>
+    <p>3168384599</p>
+    <p>No hacemos reembolso de transferencias, ten claro lo que vas a pedir ✍️</p>
+    <small>⚠️ POR FAVOR ENVIAR EL PANTALLAZO DE LA TRANSFERENCIA JUSTO EN EL MOMENTO QUE SEA EFECTUADA POR WHATSAPP</small>
+  </div>
+
+  <div id="infoCrediSevir" class="info-transferencia" style="display:none;">
+    <p><strong>💳 CrediSevir</strong></p>
+    <p>3182231625</p>
+    <p>No hacemos reembolso de transferencias, ten claro lo que vas a pedir ✍️</p>
+  </div>
+
+</div>
+
+    <div class="form-group">
+      <label for="especificaciones">📒 Especificaciones:</label>
+      <textarea id="especificaciones" name="especificaciones" placeholder="Ej: sin cebolla, sin salsas..." rows="3"></textarea>
+    </div>
+
+  </section>
+
+  <!--TOTAL Y BOTON-->
+  <section class="menu-section">
+    <h2>💸 Total: <span id="total">$0</span></h2>
+    <input type="hidden" name="totalPedido" id="totalPedido">
+    
+    <div class="form-group">
+      <label>
+        <input type="checkbox" id="confirmPedido" required>
+        ✅ Autorizo el tratamiento de mis datos para gestionar este pedido.
+      </label>
+    </div>
+
+    <button type="submit" class="btn">📲 Enviar Pedido</button>
+  </section>
+
+    </form>
+    <script src="escrip.js"></script>
+</body>
+</html>
