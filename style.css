@@ -3,7 +3,7 @@ body {
   display: flex;
   justify-content: center;
   font-size: 19px;
-  stem-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   background-color: #f7f3ef;
   margin: 0;
   padding: 0;
@@ -210,25 +210,6 @@ h2 {
   color: #c62828;
   margin-top: 6px;
   display: block;
-}
-
-/* ==================== Marca de agua ==================== */
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 300px;
-  height: 300px;
-  background-image: url("logo.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  opacity: 0.08;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 0;
 }
 
 .form-container {
@@ -503,8 +484,8 @@ body::before{
   transform:translate(-50%,-50%);
 
   mix-blend-mode:multiply;
-  opacity:0.09;    /* menos visible */
+  opacity:0.07;    /* menos visible */
 
   pointer-events:none;
-  z-index:o;
+  z-index:0;
 }
