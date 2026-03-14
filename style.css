@@ -313,6 +313,7 @@ h2 {
 
   #pedidoForm{
     margin:40px auto;
+    z-index: 1;
   }
 
   .portada{
@@ -466,11 +467,11 @@ h2 {
 
 /* LOGO CENTRAL AJUSTADO */
 
-body::before{
+#pedidoForm::before{
   content:"";
-  position:fixed;
+  position:absolute;
 
-  top:45%;
+  top:50%;
   left:50%;
   transform:translate(-50%,-50%);
 
@@ -486,4 +487,9 @@ body::before{
 
   pointer-events:none;
   z-index:0;
+}
+
+#pedidoForm{
+  position: relative;
+  z-index: 1; /* el contenido queda por encima del logo */
 }
