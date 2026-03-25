@@ -493,3 +493,73 @@ h2 {
   position: relative;
   z-index: 1; /* el contenido queda por encima del logo */
 }
+
+/* CONTENEDOR GENERAL */
+.mitad {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 14px;
+  margin: 12px 0;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: transform 0.15s ease;
+}
+
+.mitad:hover {
+  transform: scale(1.01);
+}
+
+/* TITULO PIZZA */
+.mitad p strong {
+  font-size: 1rem;
+  color: #111;
+}
+
+/* LINEAS DE MITADES */
+.mitad-linea {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+/* LABEL */
+.mitad-linea label {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+/* SELECT */
+.mitad select {
+  padding: 9px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+  background: #f8f8f8;
+  transition: all 0.2s ease;
+}
+
+/* EFECTO FOCUS */
+.mitad select:focus {
+  border-color: #ff6b00;
+  background: #fff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255,107,0,0.15);
+}
+
+/* PRECIO */
+.mitad span {
+  color: #ff6b00;
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+/* TEXTO PRECIO */
+.mitad p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* TEXTO EXPLICATIVO */
+.platos p {
+  margin-bottom: 10px;
+}

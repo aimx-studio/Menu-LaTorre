@@ -107,6 +107,14 @@ total += precio * cantidad;
 
 });
 
+// Pizzas mitad y mitad
+for(let n = 1; n <= 3; n++){
+const a = parseInt(document.getElementById('mitad'+n+'a')?.value) || 0;
+const b = parseInt(document.getElementById('mitad'+n+'b')?.value) || 0;
+const precio = Math.max(a, b);
+total += precio;
+}
+
 document.getElementById("total").innerText =
 "$" + total.toLocaleString("es-CO");
 
@@ -117,19 +125,16 @@ document.getElementById("totalPedido").value = total;
 // CONFIGURACION AL CARGAR
 document.addEventListener("DOMContentLoaded",function(){
 
-// cerrar todas las secciones del menú
 document.querySelectorAll(".menu-section .menu-contenido")
 .forEach(sec=>{
 sec.style.display="none";
 });
 
-// desactivar cantidades
 document.querySelectorAll(".cantidad").forEach(c=>{
 c.disabled=true;
 c.value=0;
 });
 
-// ocultar descripciones
 document.querySelectorAll(".descripcion")
 .forEach(d=>d.style.display="none");
 
@@ -144,6 +149,7 @@ const tipoEntrega = document.getElementById("tipoEntrega");
 const direccionField = document.getElementById("direccionField");
 const mesaField = document.getElementById("mesaField");
 const costoDomicilio = document.getElementById("costoDomicilio");
+const notaEmpaque = document.getElementById("notaEmpaque");
 
 if(!tipoEntrega) return;
 
@@ -152,10 +158,16 @@ tipoEntrega.addEventListener("change",function(){
 direccionField.style.display="none";
 mesaField.style.display="none";
 costoDomicilio.style.display="none";
+notaEmpaque.style.display="none";
 
 if(this.value==="A domicilio"){
 direccionField.style.display="block";
 costoDomicilio.style.display="block";
+notaEmpaque.style.display="block";
+}
+
+if(this.value==="Recoger en el local"){
+notaEmpaque.style.display="block";
 }
 
 if(this.value==="Comer dentro del local"){
@@ -163,9 +175,7 @@ mesaField.style.display="block";
 }
 
 });
-
 });
-
 
 // =============================
 // CONTROL PAGOS
@@ -239,12 +249,9 @@ if(cant<=0) return;
 let nombre = cb.value;
 let detalle="";
 
-// obtener sección
 let seccion = cb.closest(".menu-section")?.querySelector("h2")?.innerText || "";
 seccion = seccion.replace(/[^\p{L}\p{N}\s]/gu,"").trim();
 
-
-// tamaño pizza
 const tamano = item.querySelector(".tamano");
 if(tamano){
 
@@ -255,7 +262,6 @@ detalle="("+letra+")";
 
 }
 
-// sabor
 const sabor = item.querySelector(".sabor");
 if(sabor){
 
@@ -269,7 +275,6 @@ detalle="("+txt+")";
 
 }
 
-// tipo jugo
 const tipo = item.querySelector(".tipo");
 if(tipo){
 
@@ -280,7 +285,6 @@ detalle="("+tipoTxt+" - "+saborTxt+")";
 
 }
 
-// SOLO para frutti di mare
 let nombreFinal = nombre;
 
 if(nombre.toLowerCase().includes("frutti")){
@@ -297,6 +301,41 @@ platos+="• "+nombreFinal+" "+detalle+" x"+cant+"\n";
 
 return platos;
 
+}
+
+
+// =============================
+// 🔥 PIZZAS MITAD Y MITAD
+// =============================
+function obtenerPizzasMitad(){
+
+let texto = "";
+
+for(let n = 1; n <= 3; n++){
+
+let s1 = document.getElementById('mitad'+n+'a');
+let s2 = document.getElementById('mitad'+n+'b');
+
+if(!s1 || !s2) continue;
+
+let m1 = s1.options[s1.selectedIndex].text;
+let m2 = s2.options[s2.selectedIndex].text;
+
+if(m1.includes("Selecciona") || m2.includes("Selecciona")) continue;
+
+m1 = m1.split(" ($")[0];
+m2 = m2.split(" ($")[0];
+
+let precio = document.getElementById('preciomitad'+n)?.innerText || "$0";
+
+texto += "🍕 Pizza " + n + ":\n";
+texto += "- Mitad 1: " + m1 + "\n";
+texto += "- Mitad 2: " + m2 + "\n";
+texto += "- Precio: " + precio + "\n\n";
+
+}
+
+return texto;
 }
 
 
@@ -337,9 +376,11 @@ const efectivo=document.getElementById("efectivoCliente")?.value;
 
 const especificaciones=document.getElementById("especificaciones")?.value;
 
-const platos=obtenerPlatos();
+// 🔥 AQUÍ EL FIX
+let platos = obtenerPlatos();
+let pizzas = obtenerPizzasMitad();
 
-if(!platos.trim()){
+if(!platos.trim() && !pizzas.trim()){
 alert("Debes seleccionar al menos un plato");
 enviando=false;
 return;
@@ -357,41 +398,47 @@ minimumFractionDigits:0
 });
 }
 
-
 // MENSAJE
-let mensaje="📦 Nuevo pedido recibido\n\n";
+let mensaje = "📦 Nuevo pedido recibido\n\n";
 
-mensaje+="👤 Nombre: "+nombre+"\n\n";
-mensaje+="📞 Número: "+telefono+"\n\n";
+mensaje += "👤 Nombre: " + nombre + "\n\n";
+mensaje += "📞 Número: " + telefono + "\n\n";
 
-mensaje+="🍽️ Platos:\n"+platos+"\n";
+// 🔥 ORDEN CORRECTO
+mensaje += platos;
+
+if(pizzas.trim()){
+mensaje += "\n" + pizzas;
+}
+
+mensaje += "\n";
 
 if(tipoEntrega){
-mensaje+="📦 Método: "+tipoEntrega+"\n\n";
+mensaje += "📦 Método: " + tipoEntrega + "\n\n";
 }
 
 if(direccion){
-mensaje+="📍 Dirección: "+direccion+"\n\n";
+mensaje += "📍 Dirección: " + direccion + "\n\n";
 }
 
 if(mesa){
-mensaje+="🪑 Mesa: "+mesa+"\n\n";
+mensaje += "🪑 Mesa: " + mesa + "\n\n";
 }
 
 if(tipoPago){
-mensaje+="💳 Forma de Pago: "+tipoPago+"\n\n";
+mensaje += "💳 Forma de Pago: " + tipoPago + "\n\n";
 }
 
 if(efectivo){
-mensaje+="💵 Con cuánto paga: "+efectivo+"\n\n";
+mensaje += "💵 Con cuánto paga: " + efectivo + "\n\n";
 }
 
 if(especificaciones){
-mensaje+="📒 Especificaciones: "+especificaciones+"\n\n";
+mensaje += "📒 Especificaciones: " + especificaciones + "\n\n";
 }
 
 if(totalTexto){
-mensaje+="💰 Total: "+totalTexto;
+mensaje += "🧾 Total: " + totalTexto;
 }
 
 // WHATSAPP
@@ -405,7 +452,6 @@ encodeURIComponent(mensaje);
 
 window.open(url,"_blank");
 
-// redirigir a página de agradecimiento
 setTimeout(function(){
 window.location.href = "gracias.html";
 }, 1500);
@@ -413,6 +459,7 @@ window.location.href = "gracias.html";
 });
 
 });
+
 
 // =============================
 // FORZAR CIERRE DEL MENU
@@ -424,3 +471,12 @@ seccion.style.display = "none";
 });
 
 });
+
+function calcularMitad(n){
+const a = parseInt(document.getElementById('mitad'+n+'a')?.value) || 0;
+const b = parseInt(document.getElementById('mitad'+n+'b')?.value) || 0;
+const precio = Math.max(a, b);
+document.getElementById('preciomitad'+n).textContent =
+precio > 0 ? '$' + precio.toLocaleString('es-CO') : '$0';
+calcularTotal();
+}

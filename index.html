@@ -14,9 +14,263 @@
     <h1>Menú</h1>
 
 <section class="menu-section">
+<h2 onclick="toggleMenu(this)">🔥 Pizza Mitad y Mitad</h2>
+<div class="platos" style="display:none;">
 
+<p style="font-size:0.9em; color:#000000;">Solo disponible en tamaño M. El precio corresponde al sabor más caro de las dos mitades.</p>
+
+<!-- Pizza 1 -->
+<div class="mitad">
+<p><strong>🍕 Pizza 1</strong></p>
+<div class="mitad-linea">
+<label>Mitad 1:</label>
+<select id="mitad1a" onchange="calcularMitad(1)">
+<option value="0">-- Selecciona sabor --</option>
+<option value="45000">Burger Pizza</option>
+<option value="45000">Hot Dog Pizza</option>
+<option value="50000">Di Búfala</option>
+<option value="45000">Guanciale</option>
+<option value="43000">Pepperonata</option>
+<option value="46000">Alfredo Pollo y Brócoli</option>
+<option value="55000">Frutti Di Mare</option>
+<option value="47000">Madrileña</option>
+<option value="47000">La torre</option>
+<option value="48000">Filet Mignon</option>
+<option value="46000">Parrilla Argentina</option>
+<option value="45000">Pepperoni Chicken Hot</option>
+<option value="45000">Vendetta</option>
+<option value="45000">Cuatro Quesos</option>
+<option value="38000">Campesina</option>
+<option value="45000">Colombiana</option>
+<option value="38000">Bacon Pepperoni</option>
+<option value="45000">Inca Style</option>
+<option value="45000">Pollo y Jamón</option>
+<option value="40000">Pollo BBQ</option>
+<option value="40000">Costillas BBQ</option>
+<option value="45000">Pollo y Champiñones</option>
+<option value="42000">Pepperoni</option>
+<option value="38000">Napolitana</option>
+<option value="40000">Carnes Frías</option>
+<option value="40000">Mexicana</option>
+<option value="50000">Di Bufala Tradicional</option>
+<option value="40000">Vegetariana</option>
+<option value="45000">Tropical</option>
+<option value="40000">Pizza Hawaiana</option>
+<option value="38000">Veleña</option>
+<option value="40000">Maduro Tocineta</option>
+</select>
+</div>
+<div class="mitad-linea">
+<label>Mitad 2:</label>
+<select id="mitad1b" onchange="calcularMitad(1)">
+<option value="0">-- Selecciona sabor --</option>
+<option value="45000">Burger Pizza</option>
+<option value="45000">Hot Dog Pizza</option>
+<option value="50000">Di Búfala</option>
+<option value="45000">Guanciale</option>
+<option value="43000">Pepperonata</option>
+<option value="46000">Alfredo Pollo y Brócoli</option>
+<option value="55000">Frutti Di Mare</option>
+<option value="47000">Madrileña</option>
+<option value="47000">La torre</option>
+<option value="48000">Filet Mignon</option>
+<option value="46000">Parrilla Argentina</option>
+<option value="45000">Pepperoni Chicken Hot</option>
+<option value="45000">Vendetta</option>
+<option value="45000">Cuatro Quesos</option>
+<option value="38000">Campesina</option>
+<option value="45000">Colombiana</option>
+<option value="38000">Bacon Pepperoni</option>
+<option value="45000">Inca Style</option>
+<option value="45000">Pollo y Jamón</option>
+<option value="40000">Pollo BBQ</option>
+<option value="40000">Costillas BBQ</option>
+<option value="45000">Pollo y Champiñones</option>
+<option value="42000">Pepperoni</option>
+<option value="38000">Napolitana</option>
+<option value="40000">Carnes Frías</option>
+<option value="40000">Mexicana</option>
+<option value="50000">Di Bufala Tradicional</option>
+<option value="40000">Vegetariana</option>
+<option value="45000">Tropical</option>
+<option value="40000">Pizza Hawaiana</option>
+<option value="38000">Veleña</option>
+<option value="40000">Maduro Tocineta</option>
+</select>
+</div>
+<p>Precio: <strong><span id="preciomitad1">$0</span></strong></p>
+</div>
+
+<!-- Pizza 2 -->
+<div class="mitad">
+<p><strong>🍕 Pizza 2</strong></p>
+<div class="mitad-linea">
+<label>Mitad 1:</label>
+<select id="mitad2a" onchange="calcularMitad(2)">
+<option value="0">-- Selecciona sabor --</option>
+<option value="45000">Burger Pizza</option>
+<option value="45000">Hot Dog Pizza</option>
+<option value="50000">Di Búfala</option>
+<option value="45000">Guanciale</option>
+<option value="43000">Pepperonata</option>
+<option value="46000">Alfredo Pollo y Brócoli</option>
+<option value="55000">Frutti Di Mare</option>
+<option value="47000">Madrileña</option>
+<option value="47000">La torre</option>
+<option value="48000">Filet Mignon</option>
+<option value="46000">Parrilla Argentina</option>
+<option value="45000">Pepperoni Chicken Hot</option>
+<option value="45000">Vendetta</option>
+<option value="45000">Cuatro Quesos</option>
+<option value="38000">Campesina</option>
+<option value="45000">Colombiana</option>
+<option value="38000">Bacon Pepperoni</option>
+<option value="45000">Inca Style</option>
+<option value="45000">Pollo y Jamón</option>
+<option value="40000">Pollo BBQ</option>
+<option value="40000">Costillas BBQ</option>
+<option value="45000">Pollo y Champiñones</option>
+<option value="42000">Pepperoni</option>
+<option value="38000">Napolitana</option>
+<option value="40000">Carnes Frías</option>
+<option value="40000">Mexicana</option>
+<option value="50000">Di Bufala Tradicional</option>
+<option value="40000">Vegetariana</option>
+<option value="45000">Tropical</option>
+<option value="40000">Pizza Hawaiana</option>
+<option value="38000">Veleña</option>
+<option value="40000">Maduro Tocineta</option>
+</select>
+</div>
+<div class="mitad-linea">
+<label>Mitad 2:</label>
+<select id="mitad2b" onchange="calcularMitad(2)">
+<option value="0">-- Selecciona sabor --</option>
+<option value="45000">Burger Pizza</option>
+<option value="45000">Hot Dog Pizza</option>
+<option value="50000">Di Búfala</option>
+<option value="45000">Guanciale</option>
+<option value="43000">Pepperonata</option>
+<option value="46000">Alfredo Pollo y Brócoli</option>
+<option value="55000">Frutti Di Mare</option>
+<option value="47000">Madrileña</option>
+<option value="47000">La torre</option>
+<option value="48000">Filet Mignon</option>
+<option value="46000">Parrilla Argentina</option>
+<option value="45000">Pepperoni Chicken Hot</option>
+<option value="45000">Vendetta</option>
+<option value="45000">Cuatro Quesos</option>
+<option value="38000">Campesina</option>
+<option value="45000">Colombiana</option>
+<option value="38000">Bacon Pepperoni</option>
+<option value="45000">Inca Style</option>
+<option value="45000">Pollo y Jamón</option>
+<option value="40000">Pollo BBQ</option>
+<option value="40000">Costillas BBQ</option>
+<option value="45000">Pollo y Champiñones</option>
+<option value="42000">Pepperoni</option>
+<option value="38000">Napolitana</option>
+<option value="40000">Carnes Frías</option>
+<option value="40000">Mexicana</option>
+<option value="50000">Di Bufala Tradicional</option>
+<option value="40000">Vegetariana</option>
+<option value="45000">Tropical</option>
+<option value="40000">Pizza Hawaiana</option>
+<option value="38000">Veleña</option>
+<option value="40000">Maduro Tocineta</option>
+</select>
+</div>
+<p>Precio: <strong><span id="preciomitad2">$0</span></strong></p>
+</div>
+
+<!-- Pizza 3 -->
+<div class="mitad">
+<p><strong>🍕 Pizza 3</strong></p>
+<div class="mitad-linea">
+<label>Mitad 1:</label>
+<select id="mitad3a" onchange="calcularMitad(3)">
+<option value="0">-- Selecciona sabor --</option>
+<option value="45000">Burger Pizza</option>
+<option value="45000">Hot Dog Pizza</option>
+<option value="50000">Di Búfala</option>
+<option value="45000">Guanciale</option>
+<option value="43000">Pepperonata</option>
+<option value="46000">Alfredo Pollo y Brócoli</option>
+<option value="55000">Frutti Di Mare</option>
+<option value="47000">Madrileña</option>
+<option value="47000">La torre</option>
+<option value="48000">Filet Mignon</option>
+<option value="46000">Parrilla Argentina</option>
+<option value="45000">Pepperoni Chicken Hot</option>
+<option value="45000">Vendetta</option>
+<option value="45000">Cuatro Quesos</option>
+<option value="38000">Campesina</option>
+<option value="45000">Colombiana</option>
+<option value="38000">Bacon Pepperoni</option>
+<option value="45000">Inca Style</option>
+<option value="45000">Pollo y Jamón</option>
+<option value="40000">Pollo BBQ</option>
+<option value="40000">Costillas BBQ</option>
+<option value="45000">Pollo y Champiñones</option>
+<option value="42000">Pepperoni</option>
+<option value="38000">Napolitana</option>
+<option value="40000">Carnes Frías</option>
+<option value="40000">Mexicana</option>
+<option value="50000">Di Bufala Tradicional</option>
+<option value="40000">Vegetariana</option>
+<option value="45000">Tropical</option>
+<option value="40000">Pizza Hawaiana</option>
+<option value="38000">Veleña</option>
+<option value="40000">Maduro Tocineta</option>
+</select>
+</div>
+<div class="mitad-linea">
+<label>Mitad 2:</label>
+<select id="mitad3b" onchange="calcularMitad(3)">
+<option value="0">-- Selecciona sabor --</option>
+<option value="45000">Burger Pizza</option>
+<option value="45000">Hot Dog Pizza</option>
+<option value="50000">Di Búfala</option>
+<option value="45000">Guanciale</option>
+<option value="43000">Pepperonata</option>
+<option value="46000">Alfredo Pollo y Brócoli</option>
+<option value="55000">Frutti Di Mare</option>
+<option value="47000">Madrileña</option>
+<option value="47000">La torre</option>
+<option value="48000">Filet Mignon</option>
+<option value="46000">Parrilla Argentina</option>
+<option value="45000">Pepperoni Chicken Hot</option>
+<option value="45000">Vendetta</option>
+<option value="45000">Cuatro Quesos</option>
+<option value="38000">Campesina</option>
+<option value="45000">Colombiana</option>
+<option value="38000">Bacon Pepperoni</option>
+<option value="45000">Inca Style</option>
+<option value="45000">Pollo y Jamón</option>
+<option value="40000">Pollo BBQ</option>
+<option value="40000">Costillas BBQ</option>
+<option value="45000">Pollo y Champiñones</option>
+<option value="42000">Pepperoni</option>
+<option value="38000">Napolitana</option>
+<option value="40000">Carnes Frías</option>
+<option value="40000">Mexicana</option>
+<option value="50000">Di Bufala Tradicional</option>
+<option value="40000">Vegetariana</option>
+<option value="45000">Tropical</option>
+<option value="40000">Pizza Hawaiana</option>
+<option value="38000">Veleña</option>
+<option value="40000">Maduro Tocineta</option>
+</select>
+</div>
+<p>Precio: <strong><span id="preciomitad3">$0</span></strong></p>
+</div>
+
+</div>
+</section>
+
+
+<section class="menu-section">
 <h2 onclick="toggleMenu(this)">🍽️ Entradas</h2>
-
 <div class="platos" style="display:none;">
 
 <!-- Entrada de pan -->
@@ -45,6 +299,49 @@ Pan artesanal tostado con mantequilla de ajo.
 </div>
 </div>
 
+<!-- Farsa de pizza -->
+<div class="item">
+<div class="item-linea">
+
+<label>
+<input type="checkbox" class="check-plato"
+name="Entrada de Pan"
+value="Entrada de Pan"
+onchange="toggleCantidad(this); toggleDescripcion(this)">
+Farsa de pizza
+</label>
+
+<span>$10.000</span>
+
+<input type="number" class="cantidad"
+name="EntradaPanCantidad"
+value="0" min="0"
+onchange="calcularTotal()">
+
+</div>
+</div>
+
+<!-- Papas francesas -->
+<div class="item">
+<div class="item-linea">
+
+<label>
+<input type="checkbox" class="check-plato"
+name="Entrada de Pan"
+value="Entrada de Pan"
+onchange="toggleCantidad(this); toggleDescripcion(this)">
+Papas francesas
+</label>
+
+<span>$10.000</span>
+
+<input type="number" class="cantidad"
+name="EntradaPanCantidad"
+value="0" min="0"
+onchange="calcularTotal()">
+
+</div>
+</div>
 
 <!-- Bolitas de mozzarella -->
 <div class="item">
@@ -111,7 +408,7 @@ onchange="toggleCantidad(this); toggleDescripcion(this)">
 Cazuela de Quesos ⭐
 </label>
 
-<span>$15.000</span>
+<span>$20.000</span>
 
 <input type="number" class="cantidad"
 name="CazuelaQuesosCantidad"
@@ -397,7 +694,7 @@ Arroz estilo chino con combinación de jamón artesanal, pollo, camarones y raí
 
 <div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Hot Dog Pizza" value="Hot Dog Pizza" onchange="toggleCantidad(this);toggleDescripcion(this)">Hot Dog Pizza</label><select class="tamano" onchange="calcularTotal()"><option value="28000">S $28.000</option><option value="45000">M $45.000</option></select><input type="number" class="cantidad" name="HotDogPizzaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Salchicha americana, pollo cremoso, huevo de codorniz, queso cheddar, papa ripio y piña miel mostaza.</div></div>
 
-<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Di Bufala Autor" value="Di Bufala Autor" onchange="toggleCantidad(this);toggleDescripcion(this)">Di Búfala ⭐</label><select class="tamano" onchange="calcularTotal()"><option value="28000">S $28.000</option><option value="45000">M $45.000</option></select><input type="number" class="cantidad" name="DiBufalaAutorCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Mozzarella de búfala, tomate confitado y champiñones París.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Di Bufala Autor" value="Di Bufala Autor" onchange="toggleCantidad(this);toggleDescripcion(this)">Di Búfala ⭐</label><select class="tamano" onchange="calcularTotal()"><option value="30000">S $30.000</option><option value="50000">M $50.000</option></select><input type="number" class="cantidad" name="DiBufalaAutorCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Mozzarella de búfala, tomate confitado y champiñones París.</div></div>
 
 <div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Guanciale" value="Guanciale" onchange="toggleCantidad(this);toggleDescripcion(this)">Guanciale</label><select class="tamano" onchange="calcularTotal()"><option value="28000">S $28.000</option><option value="45000">M $45.000</option></select><input type="number" class="cantidad" name="GuancialeCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Tocineta italiana artesanal (guanciale), queso parmesano y cebolla ocañera caramelizada en vino de corozo y Malbec.</div></div>
 
@@ -424,6 +721,17 @@ Arroz estilo chino con combinación de jamón artesanal, pollo, camarones y raí
 <div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Campesina" value="Campesina" onchange="toggleCantidad(this);toggleDescripcion(this)">Campesina</label><select class="tamano" onchange="calcularTotal()"><option value="25000">S $25.000</option><option value="38000">M $38.000</option></select><input type="number" class="cantidad" name="CampesinaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Láminas de pollo, maíz, pimentón y cebolla roja.</div></div>
 
 <div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Colombiana" value="Colombiana" onchange="toggleCantidad(this);toggleDescripcion(this)">Colombiana</label><select class="tamano" onchange="calcularTotal()"><option value="25000">S $25.000</option><option value="45000">M $45.000</option></select><input type="number" class="cantidad" name="ColombianaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Carne de res desmechada, chorizo santa rosano, hogao y maíz.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Bacon Pepperoni" value="Bacon Pepperoni" onchange="toggleCantidad(this);toggleDescripcion(this)">Bacon Pepperoni</label><select class="tamano" onchange="calcularTotal()"><option value="23000">S $23.000</option><option value="38000">M $38.000</option></select><input type="number" class="cantidad" name="BaconPepperoniCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Pepperoni madurado y tocineta ahumada.</div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Inca Style" value="Inca Style" onchange="toggleCantidad(this);toggleDescripcion(this)">Inca Style</label><select class="tamano" onchange="calcularTotal()"><option value="28000">S $28.000</option><option value="45000">M $45.000</option></select><input type="number" class="cantidad" name="IncaStyleCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pollo y Jamon Pizza" value="Pollo y Jamon Pizza" onchange="toggleCantidad(this);toggleDescripcion(this)">Pollo y Jamón</label><select class="tamano" onchange="calcularTotal()"><option value="28000">S $28.000</option><option value="45000">M $45.000</option></select><input type="number" class="cantidad" name="PolloJamonPizzaCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Pollo BBQ Pizza" value="Pollo BBQ Pizza" onchange="toggleCantidad(this);toggleDescripcion(this)">Pollo BBQ</label><select class="tamano" onchange="calcularTotal()"><option value="24000">S $24.000</option><option value="40000">M $40.000</option></select><input type="number" class="cantidad" name="PolloBBQCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Costillas BBQ Pizza" value="Costillas BBQ Pizza" onchange="toggleCantidad(this);toggleDescripcion(this)">Costillas BBQ</label><select class="tamano" onchange="calcularTotal()"><option value="26000">S $26.000</option><option value="40000">M $40.000</option></select><input type="number" class="cantidad" name="CostillasBBQCantidad" value="0" min="0" onchange="calcularTotal()"></div><div class="descripcion" style="display:none;"></div></div>
+
 </div></div>
 </div></div>
 
@@ -533,6 +841,55 @@ Arroz estilo chino con combinación de jamón artesanal, pollo, camarones y raí
 
 </div></div>
 
+<section class="menu-section">
+<h2 onclick="toggleMenu(this)">🍹 Cócteles</h2>
+<div class="platos" style="display:none;">
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Mojito Cubano" value="Mojito Cubano" onchange="toggleCantidad(this);toggleDescripcion(this)">Mojito Cubano</label><span>$20.000</span><input type="number" class="cantidad" name="MojitoCubanoCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Margarita Coctel" value="Margarita Coctel" onchange="toggleCantidad(this);toggleDescripcion(this)">Margarita</label><span>$17.000</span><input type="number" class="cantidad" name="MargaritaCoctelCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Gin and Tonic" value="Gin and Tonic" onchange="toggleCantidad(this);toggleDescripcion(this)">Gin and Tonic</label><span>$20.000</span><input type="number" class="cantidad" name="GinTonicCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Highball" value="Highball" onchange="toggleCantidad(this);toggleDescripcion(this)">Highball</label><span>$17.000</span><input type="number" class="cantidad" name="HighballCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Tinto de Verano" value="Tinto de Verano" onchange="toggleCantidad(this);toggleDescripcion(this)">Tinto de Verano</label><span>$14.000</span><input type="number" class="cantidad" name="TintoVeranoCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+</div>
+</section>
+
+    <section class="menu-section">
+<h2 onclick="toggleMenu(this)">🍷 Vinos</h2>
+<div class="platos" style="display:none;">
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Santa Helena Merlot" value="Santa Helena Merlot" onchange="toggleCantidad(this);toggleDescripcion(this)">Santa Helena Merlot</label><span>$80.000</span><input type="number" class="cantidad" name="SantaHelenaMerlotCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Yellow Tail" value="Yellow Tail" onchange="toggleCantidad(this);toggleDescripcion(this)">Yellow Tail</label><span>$100.000</span><input type="number" class="cantidad" name="YellowTailCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Santa Carolina Reservado" value="Santa Carolina Reservado" onchange="toggleCantidad(this);toggleDescripcion(this)">Santa Carolina Reservado</label><span>$80.000</span><input type="number" class="cantidad" name="SantaCarolinaReservadoCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Santa Carolina Rose" value="Santa Carolina Rose" onchange="toggleCantidad(this);toggleDescripcion(this)">Santa Carolina Rosé</label><span>$80.000</span><input type="number" class="cantidad" name="SantaCarolinaRoseCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Piccini Toscana" value="Piccini Toscana" onchange="toggleCantidad(this);toggleDescripcion(this)">Piccini Toscana</label><span>$95.000</span><input type="number" class="cantidad" name="PicciniToscanaCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Santa Helena Sauvignon Blanc" value="Santa Helena Sauvignon Blanc" onchange="toggleCantidad(this);toggleDescripcion(this)">Santa Helena Varietal Sauvignon Blanc</label><span>$80.000</span><input type="number" class="cantidad" name="SantaHelenaSauvignonCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Santa Carolina Reservada" value="Santa Carolina Reservada" onchange="toggleCantidad(this);toggleDescripcion(this)">Santa Carolina Reservada</label><span>$80.000</span><input type="number" class="cantidad" name="SantaCarolinaReservadaCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Intis Malbec" value="Intis Malbec" onchange="toggleCantidad(this);toggleDescripcion(this)">Intis Malbec</label><span>$45.000</span><input type="number" class="cantidad" name="IntisMalbecCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Reserva Finca Las Moras" value="Reserva Finca Las Moras" onchange="toggleCantidad(this);toggleDescripcion(this)">Reserva Finca Las Moras</label><span>$140.000</span><input type="number" class="cantidad" name="ReservaFincaLasMorasCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Finca Las Moras Malbec" value="Finca Las Moras Malbec" onchange="toggleCantidad(this);toggleDescripcion(this)">Finca Las Moras Malbec</label><span>$90.000</span><input type="number" class="cantidad" name="FincaLasMorasMalbecCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Finca Las Moras Cabernet" value="Finca Las Moras Cabernet" onchange="toggleCantidad(this);toggleDescripcion(this)">Finca Las Moras Cabernet Sauvignon</label><span>$90.000</span><input type="number" class="cantidad" name="FincaLasMorasCabernetCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Finca Las Moras Barrel Select" value="Finca Las Moras Barrel Select" onchange="toggleCantidad(this);toggleDescripcion(this)">Finca Las Moras Barrel Select Malbec</label><span>$140.000</span><input type="number" class="cantidad" name="FincaLasMorasBarrelCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Finca Las Moras Sauvignon Blanc" value="Finca Las Moras Sauvignon Blanc" onchange="toggleCantidad(this);toggleDescripcion(this)">Finca Las Moras Sauvignon Blanc</label><span>$90.000</span><input type="number" class="cantidad" name="FincaLasMorasSauvignonCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+
+</div>
+</section>
+
     <div class="menu-seccion"><h3 onclick="toggleMenu(this)">🥤 Bebidas</h3><div class="menu-contenido">
 
 <h4>Sodas Italianas</h4>
@@ -625,6 +982,13 @@ Arroz estilo chino con combinación de jamón artesanal, pollo, camarones y raí
       <label for="direccion">📍 Dirección:</label>
       <input type="text" id="direccion" name="direccion" placeholder="Escribe tu dirección">
     </div>
+    
+    <div class="form-group" id="notaEmpaque" style="display:none;">
+  <p style="color: rgb(245, 63, 63); font-weight: bold;">
+    📦 Empaque para llevar: $1.500 por producto
+  </p>
+  <small>Ejemplo: 2 pizzas = $3.000 adicionales. Este valor <strong>no está incluido en el total</strong> y se cobra aparte al momento del pago.</small>
+</div>
 
     <!-- Campo número de mesa oculto inicialmente -->
     <div class="form-group" id="mesaField" style="display:none;">
