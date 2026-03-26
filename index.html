@@ -935,7 +935,14 @@ Arroz estilo chino con combinación de jamón artesanal, pollo, camarones y raí
 
 <div class="descripcion-seccion">Todos los combos incluyen papitas, juguete y jugo HIT de cajita.</div>
 
-<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Mini Pizza Infantil" value="Mini Pizza Infantil" onchange="toggleCantidad(this);toggleDescripcion(this)">Mini Pizza</label><span>$17.000</span><select class="sabor"><option>Hawaiana</option><option>Pollo Jamón</option></select><input type="number" class="cantidad" name="MiniPizzaInfantilCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
+<div class="item"><div class="item-linea">
+<label><input type="checkbox" class="check-plato" name="Mini Pizza Infantil" value="Mini Pizza Infantil" onchange="toggleCantidad(this);toggleDescripcion(this)">Mini Pizza</label>
+<select class="tamano" onchange="calcularTotal()">
+<option value="17000">Hawaiana $17.000</option>
+<option value="17000">Pollo Jamón $17.000</option>
+</select>
+<input type="number" class="cantidad" name="MiniPizzaInfantilCantidad" value="0" min="0" onchange="calcularTotal()">
+</div></div>
 
 <div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Mini Pizza Pepperoni Infantil" value="Mini Pizza Pepperoni Infantil" onchange="toggleCantidad(this);toggleDescripcion(this)">Mini Pizza Pepperoni</label><span>$17.000</span><input type="number" class="cantidad" name="MiniPizzaPepperoniCantidad" value="0" min="0" onchange="calcularTotal()"></div></div>
 

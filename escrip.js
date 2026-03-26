@@ -404,41 +404,42 @@ let mensaje = "📦 Nuevo pedido recibido\n\n";
 mensaje += "👤 Nombre: " + nombre + "\n\n";
 mensaje += "📞 Número: " + telefono + "\n\n";
 
-// 🔥 ORDEN CORRECTO
-mensaje += platos;
-
-if(pizzas.trim()){
-mensaje += "\n" + pizzas;
+// 🔥 PLATOS
+if (platos && platos.trim()) {
+  mensaje += "🍽️ Platos:\n" + platos.trim() + "\n\n";
 }
 
-mensaje += "\n";
-
-if(tipoEntrega){
-mensaje += "📦 Método: " + tipoEntrega + "\n\n";
+// 🔥 PIZZAS
+if (pizzas && pizzas.trim()) {
+  mensaje += "🍕 Pizzas:\n" + pizzas.trim() + "\n\n";
 }
 
-if(direccion){
-mensaje += "📍 Dirección: " + direccion + "\n\n";
+if (tipoEntrega) {
+  mensaje += "📦 Método: " + tipoEntrega + "\n\n";
 }
 
-if(mesa){
-mensaje += "🪑 Mesa: " + mesa + "\n\n";
+if (direccion) {
+  mensaje += "📍 Dirección: " + direccion + "\n\n";
 }
 
-if(tipoPago){
-mensaje += "💳 Forma de Pago: " + tipoPago + "\n\n";
+if (mesa) {
+  mensaje += "🪑 Mesa: " + mesa + "\n\n";
 }
 
-if(efectivo){
-mensaje += "💵 Con cuánto paga: " + efectivo + "\n\n";
+if (tipoPago) {
+  mensaje += "💳 Forma de Pago: " + tipoPago + "\n\n";
 }
 
-if(especificaciones){
-mensaje += "📒 Especificaciones: " + especificaciones + "\n\n";
+if (efectivo) {
+  mensaje += "💵 Con cuánto paga: " + efectivo + "\n\n";
 }
 
-if(totalTexto){
-mensaje += "🧾 Total: " + totalTexto;
+if (especificaciones) {
+  mensaje += "📒 Especificaciones: " + especificaciones + "\n\n";
+}
+
+if (totalTexto) {
+  mensaje += "🧾 Total: " + totalTexto;
 }
 
 // WHATSAPP

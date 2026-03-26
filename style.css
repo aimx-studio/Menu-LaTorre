@@ -4,9 +4,29 @@ body {
   justify-content: center;
   font-size: 19px;
   font-family: system-ui, sans-serif;
-  background-color: #f7f3ef;
+
+  min-height: 100vh;
+
+  background: linear-gradient(
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.65)
+  ),
+  url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
   margin: 0;
   padding: 0;
+}
+
+/* 🔥 AJUSTE PARA CELULAR */
+@media (max-width: 600px) {
+  body {
+    background-position: center top;
+    background-attachment: scroll;
+  }
 }
 
 #pedidoForm {
@@ -14,7 +34,10 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 20px;
-  background-color: #ffffff;
+
+  background: rgba(255,255,255,0.93);
+  backdrop-filter: blur(4px);
+
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   box-sizing: border-box;
@@ -483,7 +506,8 @@ h2 {
   background-position:center;
   background-size:contain;
 
-  opacity:0.06;
+  opacity:0.05;
+  filter: grayscale(100%);
 
   pointer-events:none;
   z-index:0;
@@ -491,7 +515,7 @@ h2 {
 
 #pedidoForm{
   position: relative;
-  z-index: 1; /* el contenido queda por encima del logo */
+  z-index: 1;
 }
 
 /* CONTENEDOR GENERAL */
