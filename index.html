@@ -841,7 +841,7 @@ Arroz estilo chino con combinación de jamón artesanal, pollo, camarones y raí
 
 </div></div>
 
-<section class="menu-section">
+<section class="menu-section bebidas">
 <h2 onclick="toggleMenu(this)">🍹 Cócteles</h2>
 <div class="platos" style="display:none;">
 
@@ -857,7 +857,7 @@ Arroz estilo chino con combinación de jamón artesanal, pollo, camarones y raí
 </div>
 </section>
 
-    <section class="menu-section">
+    <section class="menu-section bebidas">
 <h2 onclick="toggleMenu(this)">🍷 Vinos</h2>
 <div class="platos" style="display:none;">
 
@@ -890,7 +890,7 @@ Arroz estilo chino con combinación de jamón artesanal, pollo, camarones y raí
 </div>
 </section>
 
-    <div class="menu-seccion"><h3 onclick="toggleMenu(this)">🥤 Bebidas</h3><div class="menu-contenido">
+    <div class="menu-seccion bebidas"><h3 onclick="toggleMenu(this)">🥤 Bebidas</h3><div class="menu-contenido">
 
 <h4>Sodas Italianas</h4>
 
@@ -960,13 +960,11 @@ Arroz estilo chino con combinación de jamón artesanal, pollo, camarones y raí
     <div class="form-group">
       <label for="nombre">👤 Nombre:</label>
       <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
-      <small class="error">Este campo es obligatorio</small>
     </div>
 
     <div class="form-group">
       <label for="telefono">📞 Número de WhatsApp:</label>
       <input type="tel" id="telefono" name="telefono" required placeholder="Ej: 3001234567">
-      <small class="error">Este campo es obligatorio</small>
     </div>
 
     <div class="form-group">
@@ -994,11 +992,14 @@ Arroz estilo chino con combinación de jamón artesanal, pollo, camarones y raí
   <p style="color: rgb(245, 63, 63); font-weight: bold;">
     📦 Empaque para llevar: $1.500 por producto
   </p>
-  <small>Ejemplo: 2 pizzas = $3.000 adicionales. Este valor <strong>no está incluido en el total</strong> y se cobra aparte al momento del pago.</small>
+  <small>Ejemplo: 2 pizzas = $3.000 adicionales. Este valor <strong>está incluido en el total</strong> y se cobra al momento del pago.</small>
 </div>
 
     <!-- Campo número de mesa oculto inicialmente -->
     <div class="form-group" id="mesaField" style="display:none;">
+      <p id="avisoEntrega" style="color:red; font-size:17px; font-weight: bold; margin-top: 8px; display:none;">
+⚠️ Comer en el local no incluye empaque (ahorras este costo)
+</p>
       <label for="numeroMesa">🔢 Número de mesa:</label>
       <input type="text" id="numeroMesa" name="numeroMesa" placeholder="Número de mesa">
     </div>
@@ -1063,9 +1064,21 @@ Arroz estilo chino con combinación de jamón artesanal, pollo, camarones y raí
 
   <!--TOTAL Y BOTON-->
   <section class="menu-section">
-    <h2>💸 Total: <span id="total">$0</span></h2>
-    <input type="hidden" name="totalPedido" id="totalPedido">
-    
+  <h2>💸 Resumen del pedido</h2>
+
+  <div style="padding:10px; text-align: center; font-size:16px;">
+    <p id="subtotal">Subtotal: $0</p>
+    <p id="empaque">Empaque: $0</p>
+
+    <hr>
+
+    <p style="font-size:18px; font-weight:bold;">
+      Total: <span id="total">$0</span>
+    </p>
+  </div>
+
+  <input type="hidden" name="totalPedido" id="totalPedido">
+</section>
     <div class="form-group">
       <label>
         <input type="checkbox" id="confirmPedido" required>
