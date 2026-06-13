@@ -13,6 +13,69 @@
     </div>
     <h1>Menú</h1>
 
+    <section class="menu-section seccion-cura" style="background: linear-gradient(135deg, #1a0a00, #3d1500); border: 2px solid #ff6a00;">
+
+  <h2 onclick="toggleMenu(this.parentElement.querySelector('.platos') ? this : this)" style="background: transparent; color: #fff; font-size: 26px; letter-spacing: 1px;">
+    🔥🍔 Burger La Cura 🔥
+    <br>
+    <span style="font-size: 13px; background: #c62828; color: #fff; padding: 3px 10px; border-radius: 20px; font-weight: normal; letter-spacing: 0;">⏳ Por tiempo limitado · 13 al 21 de junio</span>
+  </h2>
+
+  <div class="platos" style="display:none; color: #fff;">
+
+    <p style="color: #ffcc80; font-size: 0.88em; margin-bottom: 12px;">🏆 Hamburguesa participante en el <strong>Burger Tour</strong>. ¡Aprovecha antes de que se vaya!</p>
+
+    <button type="button" onclick="var d=document.getElementById('ingredientesCura'); d.style.display=d.style.display==='block'?'none':'block'; this.textContent=d.style.display==='block'?'✕ Cerrar descripción':'� Ver descripción';"
+      style="background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.4); border-radius:20px; padding:6px 16px; font-size:0.8em; cursor:pointer; margin-bottom:12px; letter-spacing:0.5px;">
+      � Ver descripción
+    </button>
+    <div id="ingredientesCura" style="display:none; color:#ddd; font-size:0.82em; line-height:1.8; margin-bottom:12px; border-top:1px solid rgba(255,255,255,0.15); padding-top:10px;">
+      <p style="color:#fff; font-weight:bold; margin:0 0 8px 0;">Una hamburguesa de autor hecha desde cero 🍔✨</p>
+      🥐 Pan artesanal estilo croissant<br>
+      🥩 160 g de carne premium nacional<br>
+      🧄 Mayonesa de ajo negro fermentado en casa<br>
+      🧅 Cebolla caramelizada en cerveza Club Colombia y canela<br>
+      🧀 Queso maduro artesanal<br>
+      🌶️ Crocante de chorizo español<br>
+      🥓 Guanciale curado en casa con miel de piña<br><br>
+      <em>Técnica, sabor y procesos artesanales en cada capa. Una experiencia que une distintas cocinas del mundo en un solo bocado. 🔥</em>
+    </div>
+
+    <div class="item" style="border-bottom:1px solid rgba(255,255,255,0.15);">
+      <div class="item-linea">
+        <label style="color:#fff;"><input type="checkbox" class="check-plato" name="La Cura Para Llevar" value="La Cura - Para llevar" onchange="toggleCantidad(this)"> Para llevar</label>
+        <span style="color:#ff8c42;">$22.000</span>
+        <input type="number" class="cantidad" value="0" min="0" onchange="calcularTotal()" style="background:rgba(255,255,255,0.15);color:#fff;border-color:rgba(255,255,255,0.3);">
+      </div>
+    </div>
+
+    <div class="item" style="border-bottom:1px solid rgba(255,255,255,0.15);">
+      <div class="item-linea">
+        <label style="color:#fff;"><input type="checkbox" class="check-plato" name="La Cura Para Llevar Con Papa" value="La Cura - Para llevar con papa" onchange="toggleCantidad(this)"> Para llevar con papas</label>
+        <span style="color:#ff8c42;">$27.000</span>
+        <input type="number" class="cantidad" value="0" min="0" onchange="calcularTotal()" style="background:rgba(255,255,255,0.15);color:#fff;border-color:rgba(255,255,255,0.3);">
+      </div>
+    </div>
+
+    <div class="item" style="border-bottom:1px solid rgba(255,255,255,0.15);">
+      <div class="item-linea">
+        <label style="color:#fff;"><input type="checkbox" class="check-plato" name="La Cura En Mesa" value="La Cura - Para la mesa" onchange="toggleCantidad(this)"> Para la mesa</label>
+        <span style="color:#ff8c42;">$19.900</span>
+        <input type="number" class="cantidad" value="0" min="0" onchange="calcularTotal()" style="background:rgba(255,255,255,0.15);color:#fff;border-color:rgba(255,255,255,0.3);">
+      </div>
+    </div>
+
+    <div class="item" style="border-bottom:1px solid rgba(255,255,255,0.15);">
+      <div class="item-linea">
+        <label style="color:#fff;"><input type="checkbox" class="check-plato" name="La Cura En Mesa Con Papa" value="La Cura - Para la mesa con papas" onchange="toggleCantidad(this)"> Para la mesa con papas</label>
+        <span style="color:#ff8c42;">$25.000</span>
+        <input type="number" class="cantidad" value="0" min="0" onchange="calcularTotal()" style="background:rgba(255,255,255,0.15);color:#fff;border-color:rgba(255,255,255,0.3);">
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <section class="menu-section">
 <h2 onclick="toggleMenu(this)">🔥 Pizza Mitad y Mitad</h2>
 <div class="platos" style="display:none;">

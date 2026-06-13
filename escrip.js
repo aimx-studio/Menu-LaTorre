@@ -108,8 +108,8 @@ precio = Number(span.innerText.replace(/\$|\.|,/g,""));
 
 subtotal += precio * cantidad;
 
-// 🔥 EMPAQUE (EXCLUIR BEBIDAS)
-if(!item.closest(".bebidas")){
+// 🔥 EMPAQUE (EXCLUIR BEBIDAS Y LA CURA)
+if(!item.closest(".bebidas") && !item.closest(".seccion-cura")){
 contadorEmpaque += cantidad;
 }
 
@@ -405,8 +405,9 @@ return texto;
 // =============================
 document.addEventListener("DOMContentLoaded",function(){
 
-const form=document.getElementById("pedidoForm");
+const form=document.querySelector("form#pedidoForm:last-of-type") || document.getElementById("pedidoForm");
 if(!form) return;
+let yaEnviado = false;
 
 let enviando=false;
 let ultimoEnvio=0;
@@ -419,6 +420,8 @@ const ahora=Date.now();
 
 if(ahora-ultimoEnvio<5000) return;
 if(enviando) return;
+if(yaEnviado) return;
+yaEnviado = true;
 
 ultimoEnvio=ahora;
 enviando=true;
@@ -552,11 +555,28 @@ numero+
 "&text="+
 encodeURIComponent(mensaje);
 
-window.open(url,"_blank");
+// ── GUARDAR EN SHEETS ──
+const formData = new FormData();
+formData.append('entry.170692400', nombre);
+formData.append('entry.2002531227', telefono);
+formData.append('entry.1415813356', platos);
+formData.append('entry.675550439', tipoEntrega);
+formData.append('entry.324456147', direccion || '');
+formData.append('entry.3935567', tipoPago);
+formData.append('entry.759808154', efectivo || '');
+formData.append('entry.1856959372', especificaciones || '');
+formData.append('entry.164913781', parseInt(total) + " COP");
 
-setTimeout(function(){
-window.location.href = "gracias.html";
-}, 1500);
+fetch('https://docs.google.com/forms/d/e/1FAIpQLScq_84VKAWSbqa6Q7_amGBT_71KLMCFWvCWs7JdNAc63p_AqA/formResponse', {
+  method: 'POST',
+  mode: 'no-cors',
+  body: formData
+}).finally(() => {
+  window.open(url,"_blank");
+  setTimeout(function(){
+    window.location.href = "gracias.html";
+  }, 1500);
+});
 
 });
 
