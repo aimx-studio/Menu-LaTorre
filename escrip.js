@@ -565,7 +565,7 @@ formData.append('entry.324456147', direccion || '');
 formData.append('entry.3935567', tipoPago);
 formData.append('entry.759808154', efectivo || '');
 formData.append('entry.1856959372', especificaciones || '');
-formData.append('entry.164913781', parseInt(total) + " COP");
+formData.append('entry.164913781', "$" + (Number(document.getElementById("totalPedido")?.value) || 0).toLocaleString("es-CO") + " COP");
 
 fetch('https://docs.google.com/forms/d/e/1FAIpQLScq_84VKAWSbqa6Q7_amGBT_71KLMCFWvCWs7JdNAc63p_AqA/formResponse', {
   method: 'POST',
