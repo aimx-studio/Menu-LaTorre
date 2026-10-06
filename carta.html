@@ -374,7 +374,7 @@
 
   <div class="controles">
     <button class="flecha" id="anterior" aria-label="Página anterior">‹</button>
-    <span class="contador" id="contador" aria-live="polite">1 / 14</span>
+    <span class="contador" id="contador" aria-live="polite">1 / 15</span>
     <button class="flecha" id="siguiente" aria-label="Página siguiente">›</button>
     <input class="deslizador" id="deslizador" type="range" min="1" max="14" value="1" aria-label="Ir a la página">
   </div>
@@ -386,7 +386,8 @@
 
   <script>
     (function () {
-      var TOTAL = 14; // número de páginas de la carta
+      var NOMBRES = [1, 2, 3, '3.9', 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]; // orden de las páginas
+      var TOTAL = NOMBRES.length; // número de páginas de la carta
       var EXTENSIONES = ['jpg', 'png', 'jpeg', 'webp', 'JPG', 'PNG']; // se prueban en orden
 
       var carta = document.getElementById('carta');
@@ -397,12 +398,13 @@
 
       // Crear las páginas: carta1.jpg ... carta14.jpg
       for (var i = 1; i <= TOTAL; i++) {
+        var nombre = NOMBRES[i - 1];
         var img = document.createElement('img');
         img.className = 'carta-img';
         img.dataset.intento = 0;
-        img.src = 'imagenes/carta' + i + '.' + EXTENSIONES[0];
+        img.src = 'imagenes/carta' + nombre + '.' + EXTENSIONES[0];
         img.alt = 'Carta, página ' + i + ' de ' + TOTAL;
-        img.dataset.pagina = i;
+        img.dataset.pagina = nombre;
         img.loading = i <= 2 ? 'eager' : 'lazy';
         img.decoding = 'async';
         img.onload = function () { this.classList.add('lista'); };
